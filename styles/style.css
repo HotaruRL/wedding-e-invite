@@ -408,25 +408,16 @@ section .icon-divider {
   font-weight: 300;
 }
 
-/* --- 2. COUNTDOWN SECTION --- */
+/* --- 2. COUNTDOWN SECTION (REVISED) --- */
 #countdown {
-  padding-top: 150px;
+  padding-top: 120px;
   padding-bottom: 120px;
   background-color: hsl(0, 0%, 95%);
 }
-#countdown .countdown-blender-decor {
-  position: relative;
-  z-index: 10;
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 3rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  padding: 40px;
-  max-width: 600px;
-  margin: -250px auto 50px;
-}
 #countdown .image-box {
   position: relative;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+  width: 150px;
 }
 #countdown .image-box .image {
   width: 150px;
@@ -496,7 +487,7 @@ section .icon-divider {
   margin-top: 10px;
 }
 
-/* --- 3. INVITATION DETAILS SECTION --- (Rest of sections remain as is) */
+/* --- 3. INVITATION DETAILS SECTION --- */
 #invitation-details .container-fluid {
   max-width: 1170px;
 }
@@ -569,26 +560,14 @@ section .icon-divider {
   margin-top: 30px;
 }
 
-/* --- 4. COUPLE SECTION --- */
+/* --- 4. COUPLE SECTION (REVISED) --- */
 #couple .outer-box {
   max-width: 1170px;
   margin: 0 auto;
 }
 #couple .couple-block {
   margin-bottom: 40px;
-}
-#couple .couple-block .inner-box {
-  position: relative;
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 3rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   padding: 30px;
-  height: 100%;
-  transition: all 0.4s ease-in-out;
-}
-#couple .couple-block .inner-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 #couple .couple-block .image-box {
   position: relative;
@@ -661,7 +640,7 @@ section .icon-divider {
   line-height: 1.8;
 }
 
-/* --- 5. OUR STORY SECTION (TIMELINE) --- */
+/* --- 5. OUR STORY SECTION (TIMELINE) (REVISED) --- */
 #story {
   background-color: hsl(0, 0%, 95%);
   position: relative;
@@ -727,20 +706,11 @@ section .icon-divider {
   align-items: center;
   margin-bottom: 80px;
   position: relative;
+  padding: 30px;
+  z-index: 1;
 }
 #story .event-block-two:last-child {
   margin-bottom: 0;
-}
-#story .event-block-two .inner-box {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 1.5rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  padding: 30px;
-  position: relative;
-  z-index: 1;
 }
 #story .event-block-two .date-column {
   flex-shrink: 0;
@@ -827,32 +797,17 @@ section .icon-divider {
   margin-right: 0;
   margin-left: 30px;
 }
-#story .event-block-two.style-two .inner-box {
-  justify-content: flex-end;
-}
 #story .event-block-two.style-two .content-column {
   text-align: right;
 }
 
-/* --- 6. WEDDING PROGRAM SECTION --- */
+/* --- 6. WEDDING PROGRAM SECTION (REVISED) --- */
 #program .sec-title {
   margin-bottom: 80px;
 }
 #program .program-block {
   margin-bottom: 40px;
-}
-#program .program-block .inner-box {
-  position: relative;
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 3rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   padding: 30px;
-  height: 100%;
-  transition: all 0.4s ease-in-out;
-}
-#program .program-block .inner-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 #program .program-block .image-box {
   position: relative;
@@ -1043,7 +998,7 @@ section .icon-divider {
   font-weight: 300;
 }
 
-/* --- 9. RSVP FORM SECTION --- */
+/* --- 9. RSVP FORM SECTION (REVISED) --- */
 #rsvp-form {
   background-color: hsl(0, 0%, 95%);
   padding: 120px 0;
@@ -1051,15 +1006,10 @@ section .icon-divider {
 #rsvp-form .row {
   align-items: center;
 }
-#rsvp-form .form-column .inner-column, #rsvp-form .video-column .inner-column {
-  position: relative;
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 3rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+#rsvp-form .form-column, #rsvp-form .video-column {
   padding: 40px;
-  height: 100%;
+  position: relative;
   overflow: hidden;
-  z-index: 1;
 }
 #rsvp-form .icon-leave {
   content: "";
@@ -1215,7 +1165,7 @@ section .icon-divider {
   color: hsl(0, 0%, 12%);
 }
 
-/* --- 11. GIFTS / WISHES SECTION --- */
+/* --- 11. GIFTS / WISHES SECTION (REVISED) --- */
 #gifts {
   background-color: hsl(0, 0%, 95%);
 }
@@ -1232,25 +1182,22 @@ section .icon-divider {
   display: block;
   margin-top: 20px;
 }
-#gifts .gift-info {
+#gifts .auto-container > .text-center {
   max-width: 400px;
   margin: 0 auto;
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 1.5rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   padding: 40px 20px;
 }
-#gifts .gift-info .account-detail {
+#gifts .auto-container > .text-center .account-detail {
   font-family: "Questrial", sans-serif;
   font-size: 1.1rem;
   display: block;
   margin-bottom: 5px;
   color: hsl(0, 0%, 12%);
 }
-#gifts .gift-info .account-detail strong {
+#gifts .auto-container > .text-center .account-detail strong {
   font-weight: 600;
 }
-#gifts .gift-info .qr-code {
+#gifts .auto-container > .text-center .qr-code {
   width: 250px;
   height: 250px;
   -o-object-fit: contain;
@@ -1270,10 +1217,6 @@ section .icon-divider {
   }
   #countdown .time-countdown .counter-column .count {
     font-size: 3.5rem;
-  }
-  #countdown .countdown-blender-decor {
-    margin-top: -200px;
-    padding: 30px;
   }
   #invitation-details h3 {
     font-size: bold 3.157rem/1.3 "Questrial", sans-serif;
@@ -1319,11 +1262,6 @@ section .icon-divider {
   #countdown .time-countdown .counter-column .count {
     font-size: 3rem;
   }
-  #countdown .countdown-blender-decor {
-    margin-top: -180px;
-    padding: 25px;
-    max-width: 500px;
-  }
   #invitation-details h3 {
     font-size: bold 2.369rem/1.4 "Questrial", sans-serif;
   }
@@ -1352,9 +1290,6 @@ section .icon-divider {
   #story .event-block-two, #story .event-block-two.style-two {
     flex-direction: column;
     text-align: center;
-  }
-  #story .event-block-two .inner-box, #story .event-block-two.style-two .inner-box {
-    flex-direction: column;
   }
   #story .event-block-two .date-column, #story .event-block-two .image-column, #story .event-block-two.style-two .date-column, #story .event-block-two.style-two .image-column {
     margin: 0 0 20px 0;
@@ -1410,11 +1345,6 @@ section .icon-divider {
   #countdown .time-countdown .counter-column .count {
     font-size: 2.5rem;
   }
-  #countdown .countdown-blender-decor {
-    margin-top: -150px;
-    padding: 20px;
-    max-width: 400px;
-  }
   #invitation-details .col-lg-6 {
     padding: 0 10px;
   }
@@ -1423,9 +1353,8 @@ section .icon-divider {
     padding-bottom: 20px;
     margin-bottom: 20px;
   }
-  #couple .couple-block .inner-box {
+  #couple .couple-block {
     padding: 20px;
-    border-radius: 1.5rem;
   }
   #couple .couple-block .image-box .image {
     height: 250px;
@@ -1442,7 +1371,7 @@ section .icon-divider {
   #story .timeline-wrapper::before {
     left: 50%;
   }
-  #story .event-block-two .inner-box {
+  #story .event-block-two {
     padding: 20px;
     flex-direction: column;
     text-align: center;
@@ -1450,9 +1379,8 @@ section .icon-divider {
   #story .event-block-two .date-column, #story .event-block-two .image-column {
     margin-bottom: 15px;
   }
-  #program .program-block .inner-box {
+  #program .program-block {
     padding: 20px;
-    border-radius: 1.5rem;
   }
   #program .program-block .image-box .image {
     height: 150px;
@@ -1479,11 +1407,7 @@ section .icon-divider {
     font-size: 1rem;
   }
   #rsvp-form .form-column, #rsvp-form .video-column {
-    padding: 0 10px;
-  }
-  #rsvp-form .form-column .inner-column, #rsvp-form .video-column .inner-column {
     padding: 25px;
-    border-radius: 1.5rem;
   }
   #rsvp-form .contact-form-one iframe {
     height: 500px;
@@ -1507,13 +1431,13 @@ section .icon-divider {
   #gifts .sec-title .gift-message {
     font-size: 1rem;
   }
-  #gifts .gift-info {
+  #gifts .auto-container > .text-center {
     padding: 25px 15px;
   }
-  #gifts .gift-info .account-detail {
+  #gifts .auto-container > .text-center .account-detail {
     font-size: 1rem;
   }
-  #gifts .gift-info .qr-code {
+  #gifts .auto-container > .text-center .qr-code {
     width: 200px;
     height: 200px;
   }
@@ -1536,11 +1460,6 @@ section .icon-divider {
   #countdown .time-countdown .counter-column sub {
     font-size: 0.8rem;
   }
-  #countdown .countdown-blender-decor {
-    margin-top: -120px;
-    padding: 15px;
-    max-width: 90%;
-  }
   #invitation-details .invitation-main-img {
     max-width: 300px;
   }
@@ -1557,9 +1476,8 @@ section .icon-divider {
   #invitation-details .closing-remark {
     font-size: bold 1.333rem/1.6 "Questrial", sans-serif;
   }
-  #couple .couple-block .inner-box {
+  #couple .couple-block {
     padding: 15px;
-    border-radius: 1.5rem;
   }
   #couple .couple-block .image-box .image {
     height: 200px;
@@ -1582,7 +1500,7 @@ section .icon-divider {
   #story .timeline-wrapper::before {
     left: 50%;
   }
-  #story .event-block-two .inner-box {
+  #story .event-block-two {
     padding: 15px;
   }
   #story .event-block-two .date-column .date-box .date {
@@ -1598,9 +1516,8 @@ section .icon-divider {
   #story .event-block-two .content-column .content-box h4.title {
     font-size: bold 1.333rem/1.6 "Questrial", sans-serif;
   }
-  #program .program-block .inner-box {
+  #program .program-block {
     padding: 15px;
-    border-radius: 1.5rem;
   }
   #program .program-block .image-box .image {
     height: 120px;
@@ -1629,9 +1546,8 @@ section .icon-divider {
   #cta .content-box .text {
     font-size: 0.9rem;
   }
-  #rsvp-form .form-column .inner-column, #rsvp-form .video-column .inner-column {
+  #rsvp-form .form-column, #rsvp-form .video-column {
     padding: 20px;
-    border-radius: 1.5rem;
   }
   #rsvp-form .contact-form-one iframe {
     height: 400px;
@@ -1667,13 +1583,13 @@ section .icon-divider {
   #gifts .sec-title .gift-message {
     font-size: 1rem;
   }
-  #gifts .gift-info {
+  #gifts .auto-container > .text-center {
     padding: 25px 15px;
   }
-  #gifts .gift-info .account-detail {
+  #gifts .auto-container > .text-center .account-detail {
     font-size: 1rem;
   }
-  #gifts .gift-info .qr-code {
+  #gifts .auto-container > .text-center .qr-code {
     width: 200px;
     height: 200px;
   }
