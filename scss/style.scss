@@ -1,0 +1,13 @@
+// scss/style.scss
+
+// Import sass:color module for color functions
+@use "sass:color";
+
+// Import variables first, as they are used by other files
+@import 'variables';
+
+// Then import other partials
+@import 'main';
+@import 'sections';
+@import 'animations';
+// Removed @import 'carousel'; as it's no longer used

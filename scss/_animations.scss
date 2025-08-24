@@ -1,0 +1,15 @@
+// scss/_animations.scss
+
+// --- KEYFRAME ANIMATIONS FOR DECORATIVE ELEMENTS ---
+@keyframes bounce-y {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+@keyframes bounce-x {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-20px); }
+}
+@keyframes rotate-x {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+}

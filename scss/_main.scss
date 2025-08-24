@@ -1,0 +1,216 @@
+// scss/_main.scss
+
+// Import variables
+@import 'variables';
+
+/* --- GLOBAL RESET & BASE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family-questrial; // Primary font
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: $color-text-dark;
+    background-color: $color-text-white; // Overall page background
+    line-height: 1.6;
+}
+
+// Utility containers for consistent width
+.container, .auto-container {
+    max-width: $auto-container-width; // Explicit max-width from template
+    margin: 0 auto;
+    padding: 0 15px; // Default horizontal padding
+    position: relative;
+}
+
+// Global Heading Styles
+h1 { font: $h1-font; color: $color-text-dark; margin-bottom: 25px; }
+h2 { font: $h2-font; color: $color-text-dark; margin-bottom: 25px; }
+h3 { font: $h3-font; color: $color-text-dark; margin-bottom: 20px; }
+h4 { font: $h4-font; color: $color-text-dark; margin-bottom: 15px; }
+h5 { font: $h5-font; color: $color-text-dark; margin-bottom: 15px; }
+h6 { font: $h6-font; color: $color-text-dark; margin-bottom: 10px; }
+p { margin-bottom: 1.5rem; line-height: 1.7; }
+
+/* --- NAVIGATION BAR --- */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: $color-text-white; // White header background
+    padding: 1rem 0;
+    box-shadow: $shadow-light; // Subtle shadow
+    border-bottom: 1px solid $color-muted-grey; // Thin bottom border
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: $container-max-width;
+    }
+
+    .logo {
+        color: $color-text-dark;
+        font-family: $font-family-questrial;
+        font-size: 1.5rem;
+        font-weight: 700;
+        white-space: nowrap;
+        padding: 0.2rem 0.5rem;
+        transition: $transition-fast;
+
+        &:hover {
+            color: $color-primary-red;
+            transform: translateY(-2px);
+        }
+    }
+
+    ul {
+        display: flex;
+        gap: 2rem;
+
+        li a {
+            position: relative;
+            color: $color-text-dark;
+            font-weight: 500;
+            padding: 5px 0;
+            transition: $transition-fast;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 0;
+                left: 0;
+                height: 2px;
+                bottom: -2px;
+                background: $gradient-main;
+                transition: $transition-fast;
+            }
+
+            &:hover {
+                color: $color-primary-red;
+                &::before { width: 100%; }
+            }
+        }
+    }
+}
+
+/* --- FOOTER --- */
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: $padding-y-section-sm 0;
+    background-color: $color-medium-grey;
+    color: $color-text-light;
+    text-align: center;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+
+        li a {
+            color: $color-text-light;
+            font-weight: 300;
+            transition: $transition-fast;
+
+            &:hover {
+                color: $color-primary-red;
+                transform: scale(1.05);
+            }
+        }
+    }
+    .copyright {
+        font-weight: 300;
+        margin-top: 1rem;
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+}
+
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background-color: $color-muted-grey; }
+::-webkit-scrollbar-thumb {
+    background: $gradient-main-vertical;
+    border-radius: $border-radius-small;
+    border: 2px solid $color-muted-grey;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS (Main/Nav/Footer) --- */
+@media (max-width: $breakpoint-desktop-lg) {
+    #navbar {
+        .logo { font-size: 1.3rem; }
+        ul { gap: 1.5rem; }
+    }
+    h1 { font-size: 4.5rem; }
+    h2 { font-size: 3.5rem; }
+    h3 { font-size: 2.5rem; }
+    h4 { font-size: 2rem; }
+    h5 { font-size: 1.5rem; }
+    h6 { font-size: 1.2rem; }
+}
+
+@media (max-width: $breakpoint-laptop) {
+    #navbar {
+        padding: 0.8rem 0;
+        .logo { font-size: 1.2rem; }
+        ul { gap: 1rem; }
+    }
+    h1 { font-size: 3.8rem; }
+    h2 { font-size: 3rem; }
+    h3 { font-size: 2.2rem; }
+    h4 { font-size: 1.8rem; }
+    h5 { font-size: 1.4rem; }
+    h6 { font-size: 1.1rem; }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    #navbar {
+        .container {
+            flex-direction: column;
+            gap: 10px;
+        }
+        ul {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            li a { font-size: 0.9em; }
+        }
+    }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 2rem; }
+    h4 { font-size: 1.6rem; }
+    h5 { font-size: 1.2rem; }
+    h6 { font-size: 1rem; }
+}
+
+@media (max-width: $breakpoint-phone) {
+    #navbar {
+        padding: 0.5rem 0;
+        .logo { font-size: 1rem; }
+        ul {
+            gap: 0.5rem;
+            li a { font-size: 0.8em; padding: 3px 5px; }
+        }
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.7rem; }
+    h4 { font-size: 1.4rem; }
+    h5 { font-size: 1.1rem; }
+    h6 { font-size: 0.95rem; }
+}
