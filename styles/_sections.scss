@@ -6,20 +6,19 @@
 section {
     width: 100%;
     position: relative;
-    padding: $padding-y-section-lg $padding-x-content; // Default large padding with horizontal content constraint
+    padding: $padding-y-section-lg $padding-x-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: $color-text-white; // Default background
+    background-color: $color-text-white;
     overflow: hidden;
 
-    // Common title styling (from reference's `sec-title`)
     .sec-title {
         margin-bottom: 50px;
         .sub-title {
-            font-family: $font-family-dancing; // Script font for sub-titles
+            font-family: $font-family-dancing;
             font-size: 3rem;
             color: $color-bronze;
             display: block;
@@ -30,11 +29,11 @@ section {
             color: $color-text-dark;
             letter-spacing: 0.25rem;
         }
-        &.light { // For titles on dark backgrounds
+        &.light {
             .sub-title, h2 { color: $color-text-white; }
         }
     }
-    .icon-divider { // Generic floral divider
+    .icon-divider {
         @include icon-style('../img/decorations/red-divider-001.png', 300px, 100px);
         position: relative;
         margin: 0 auto 5px;
@@ -44,7 +43,7 @@ section {
 /* --- 1. BANNER SECTION (OVERVIEW) --- */
 #overview {
     min-height: 100vh;
-    padding-top: 150px; // Adjusted padding for more space
+    padding-top: 150px;
     padding-bottom: 100px;
     background: url('../img/decorations/pink-rose-petals.jpg') center center no-repeat;
     background-size: cover;
@@ -52,23 +51,19 @@ section {
     background-blend-mode: multiply;
     background-color: rgba($color-text-dark, 0.5);
     color: $color-text-light;
-    display: flex; // Use flex to help center content vertically
+    display: flex;
     align-items: center;
 
     .bg-pattern-1 {
         position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
+        width: 100%; height: 100%;
+        top: 0; left: 0;
         background: url('../img/decorations/realistic-red-silk-background.jpg') repeat;
         opacity: 0.3;
         z-index: 1;
     }
-
     .auto-container { z-index: 2; }
     .content-box { position: relative; padding: 30px 0; }
-    
     .date {
         font-size: 1.6rem;
         font-family: $font-family-questrial;
@@ -76,16 +71,15 @@ section {
         margin-bottom: 30px;
         letter-spacing: 2px;
     }
-
     .name {
-        font-size: 5.5rem; // Slightly adjusted for better fit
+        font-size: 5.5rem;
         font-weight: 700;
         color: $color-text-white;
         margin-bottom: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: row; // Default direction for large screens
+        flex-direction: row;
         line-height: 1;
 
         .bride-name, .groom-name {
@@ -93,39 +87,31 @@ section {
             padding: 0 20px;
             white-space: nowrap;
         }
-
-        // Styles for the large, central image
         .image-box {
             position: relative;
-            margin: 0 40px; // Generous horizontal spacing
-            width: 500px;   // The large size you wanted
+            margin: 0 40px;
+            width: 500px;
             height: 500px;
-            flex-shrink: 0; // Crucial: prevents the image from shrinking
-
+            flex-shrink: 0;
             .image {
-                width: 100%;
-                height: 100%;
+                width: 100%; height: 100%;
                 border-radius: 50%;
                 overflow: hidden;
                 border: 3px solid rgba($color-text-white, 0.8);
                 img { width: 100%; height: 100%; object-fit: cover; }
             }
-
             .icon-box {
                 position: absolute;
-                top: 50%;
-                left: 50%;
+                top: 50%; left: 50%;
                 transform: translate(-49%, -51%);
-                width: 700px;  // Frame is larger than the image
+                width: 700px;
                 height: 700px;
-
                 .icon-flowers-1 {
                     @include icon-style('../img/decorations/watercolor-flowers-circular-frame.svg', 100%, 100%);
                 }
             }
         }
     }
-
     .text {
         font-family: $font-family-questrial;
         font-size: 1.8rem;
@@ -133,50 +119,30 @@ section {
         font-weight: 300;
         margin-top: 50px;
     }
-}
 
-
-/* --- RESPONSIVE ADJUSTMENTS for the Banner --- */
-
-// On Laptops and smaller -> Stack the names and image
-@media (max-width: $breakpoint-desktop-lg) {
-    #overview .name {
-        flex-direction: column; // This is the key: stacks the items vertically
-        font-size: 4rem; // Reduce font size for the new layout
-
-        .image-box {
-            margin: 30px 0; // Switch to vertical margin
+    /* Responsive adjustments for Banner */
+    @media (max-width: $breakpoint-desktop-lg) {
+        .name {
+            flex-direction: column;
+            font-size: 4rem;
+            .image-box { margin: 30px 0; }
         }
     }
-}
-
-// On Tablets -> Scale down the image and fonts
-@media (max-width: $breakpoint-tablet) {
-    #overview .name {
-        font-size: 3rem;
-
-        .image-box {
-            width: 300px;
-            height: 300px;
-            .icon-box {
-                width: 360px;
-                height: 360px;
+    @media (max-width: $breakpoint-tablet) {
+        .name {
+            font-size: 3rem;
+            .image-box {
+                width: 300px; height: 300px;
+                .icon-box { width: 360px; height: 360px; }
             }
         }
     }
-}
-
-// On Phones -> Final scaling for the smallest screens
-@media (max-width: $breakpoint-phone) {
-    #overview .name {
-        font-size: 2.5rem;
-
-        .image-box {
-            width: 220px;
-            height: 220px;
-            .icon-box {
-                width: 270px;
-                height: 270px;
+    @media (max-width: $breakpoint-phone) {
+        .name {
+            font-size: 2.5rem;
+            .image-box {
+                width: 220px; height: 220px;
+                .icon-box { width: 270px; height: 270px; }
             }
         }
     }
@@ -184,10 +150,8 @@ section {
 
 /* --- 2. COUNTDOWN SECTION --- */
 #countdown {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px 0;
     background-color: $color-light-bg-subtle;
-
     .caption-box {
         .sec-title {
             margin-bottom: 0;
@@ -195,22 +159,17 @@ section {
                 font-family: $font-family-dancing;
                 font-size: 1.6rem;
                 color: $color-bronze;
-                display: block;
                 margin-bottom: 0;
             }
         }
-        .icon-divider {
-             margin: 1px auto; 
-        }
+        .icon-divider { margin: 1px auto; }
     }
-
     .time-counter {
-        margin-top: 0px; 
+        margin-top: 0;
         .time-countdown {
             display: flex;
             justify-content: center;
             gap: 30px;
-
             .counter-column {
                 display: flex;
                 flex-direction: column;
@@ -231,138 +190,110 @@ section {
             }
         }
     }
-}
-/* --- RESPONSIVE ADJUSTMENTS for Countdown Section --- */
 
-@media (max-width: $breakpoint-tablet) {
-    #countdown {
+    /* Responsive adjustments for Countdown */
+    @media (max-width: $breakpoint-tablet) {
         .time-countdown {
-            gap: 20px; // Reduce space between numbers
-
-            .counter-column {
-                .count {
-                    font-size: 3rem; // Scale down number size
-                }
-                sub {
-                    font-size: 1.2rem; // Scale down label size
-                }
-            }
+            gap: 20px;
+            .counter-column .count { font-size: 3rem; }
+            .counter-column sub { font-size: 1.2rem; }
+        }
+    }
+    @media (max-width: $breakpoint-phone) {
+        padding: 20px 0;
+        .caption-box .sec-title .text.sub-title { font-size: 1.8rem; }
+        .time-countdown {
+            gap: 15px;
+            .counter-column .count { font-size: 2rem; }
+            .counter-column sub { font-size: 1rem; margin-top: 5px; }
         }
     }
 }
 
-@media (max-width: $breakpoint-phone) {
-    #countdown {
-        // Optional: reduce padding on the smallest screens
-        padding-top: 20px;
-        padding-bottom: 20px;
-
-        .caption-box .sec-title .text.sub-title {
-            font-size: 1.8rem; // Make title smaller too
-        }
-
-        .time-countdown {
-            gap: 15px; // Further reduce space
-
-            .counter-column {
-                .count {
-                    font-size: 2rem; // Final number size for phones
-                }
-                sub {
-                    font-size: 1rem; // Final label size
-                    margin-top: 5px; // Bring label closer to number
-                }
-            }
-        }
-    }
-}
-
-/* --- 3. INVITATION DETAILS SECTION (Rewritten for Balance) --- */
+/* --- 3. INVITATION DETAILS SECTION --- */
 #invitation-details {
     .invitation-container {
         max-width: $auto-container-width;
         margin: 0 auto;
         padding: 0 15px;
     }
-
     .invitation-grid {
         display: flex;
         align-items: center;
         gap: 40px;
     }
-
-    .invitation-column-image { flex: 1; min-width: 300px; }
-    .invitation-column-text { flex: 1; min-width: 300px; text-align: center; }
-
-    .invitation-main-img {
-        width: 100%;
-        img { width: 100%; height: auto; display: block; }
+    .invitation-column-image {
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
     }
-
+    .invitation-column-text {
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
+    }
+    .invitation-main-img img { width: 100%; height: auto; display: block; }
     .invitation-title {
         font-family: $font-family-dancing;
         font-size: $h2-font;
         color: $color-primary-red;
-        margin-bottom: 30px; // Reduced margin
+        margin-top: 20px;
+        margin-bottom: 0;
     }
-
-    // Parents' Info Block (NEW STYLES)
     .parents-info {
         padding-bottom: 25px;
         margin-bottom: 25px;
         border-bottom: 1px solid $color-muted-grey;
         h4 { text-transform: uppercase; font-weight: 600; margin-bottom: 15px; }
-        
         .parents-grid {
             display: flex;
             justify-content: center;
             gap: 20px;
         }
-        .parent-column {
-            flex: 1;
-        }
+        .parent-column { flex: 1; }
     }
-    
-    // Formal Invite Block
     .formal-invite {
-        margin-bottom: 30px; // Reduced margin
+        margin-bottom: 30px;
         h3 { font-weight: bold; }
         .guest-name {
             font-family: $font-family-dancing;
-            font-size: 2.8rem; // Reduced font size
+            font-size: 2.8rem;
             color: $color-bronze;
         }
         .invite-subtitle { font-style: italic; margin-top: 0.5rem; }
     }
-
-    // Couple Names Block
     .couple-names {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 20px;
-        margin-bottom: 30px; // Reduced margin
+        margin-bottom: 30px;
         .invitator-name {
             font-family: $font-family-dancing;
-            font-size: 2.5rem; // Reduced font size
+            font-size: 2.5rem;
             color: $color-primary-red;
         }
-        .divider-heart { width: 100px; }
+        .divider-heart {
+            width: 60px;
+            flex-shrink: 0;
+        }
     }
-
-    // Event Details Block
     .event-details {
         .event-time { font-size: 1.2rem; display: block; }
-        .event-date { font-weight: bold; margin-top: 1rem; }
+        .event-date {
+            font-weight: bold;
+            margin-top: 1rem;
+            font-size: 1.25rem;
+        }
         .closing-remark {
             font-family: $font-family-dancing;
-            font-size: 2rem; // Reduced font size
+            font-size: 2rem;
             color: $color-bronze;
-            margin-top: 25px; // Reduced margin
+            margin-top: 25px;
         }
     }
 
-    /* --- RESPONSIVE STYLES --- */
+    /* Responsive styles for Invitation */
     @media (max-width: $breakpoint-tablet) {
         .invitation-grid {
             flex-direction: column;
@@ -374,29 +305,20 @@ section {
     }
 }
 
-/* --- 4. COUPLE SECTION (Revised with Divider) --- */
+/* --- 4. COUPLE SECTION --- */
 #couple {
     .auto-container { max-width: $auto-container-width; margin: 0 auto; }
-
-    // 1. Style for the new divider
     .icon-divider {
-        // The background image and size are inherited from your global styles.
-        // We just need to add some space below it.
         margin-bottom: 50px;
     }
-
-    // Main Flexbox container for the two blocks
     .couple-grid {
         display: flex;
-        gap: 40px; // Space between the bride and groom blocks
+        gap: 40px;
     }
-
-    // Styling for each individual block (Bride and Groom)
     .couple-block {
-        flex: 1; // Each block takes up 50% of the available space
-        min-width: 300px; // Prevents over-squishing before stacking
+        flex: 1;
+        min-width: 300px;
         text-align: center;
-
         .image-box {
             position: relative;
             margin-bottom: 30px;
@@ -418,7 +340,7 @@ section {
                 width: 50px; height: 50px;
                 border: 3px solid $color-primary-red;
                 border-radius: 50%;
-                background-color: $color-light-bg-subtle; // Use section bg color
+                background-color: $color-light-bg-subtle;
                 z-index: 1;
             }
             .icon-flowers-2 {
@@ -433,26 +355,24 @@ section {
         }
     }
 
-    /* --- RESPONSIVE STYLES for Stacking --- */
+    /* Responsive styles for Couple */
     @media (max-width: $breakpoint-tablet) {
         .couple-grid {
-            flex-direction: column; // This is the key to stacking
+            flex-direction: column;
         }
     }
 }
 
-/* --- 5. OUR STORY SECTION (TIMELINE) (REVISED) --- */
+/* --- 5. OUR STORY SECTION (TIMELINE) --- */
 #story {
     background-color: $color-light-bg-subtle;
     position: relative; overflow: hidden;
-
     .anim-icons {
         .icon-flowers-6 { @include icon-style('img/decorations/flower-icon-6.svg', 100px, 100px, bounce-y 8s linear infinite); top: 10%; left: 5%; }
         .icon-leaves-5 { @include icon-style('img/decorations/leaves-icon-5.svg', 80px, 80px, bounce-x 10s linear infinite); top: 60%; right: 5%; }
         .icon-leaves-6 { @include icon-style('img/decorations/leaves-icon-6.svg', 90px, 90px, bounce-x 12s linear infinite reverse); bottom: 10%; left: 10%; }
         .delay-1 { animation-delay: 1s; }
     }
-
     .timeline-wrapper {
         max-width: $auto-container-width; margin: 50px auto 0;
         position: relative; padding-bottom: 50px;
@@ -463,23 +383,21 @@ section {
             transform: translateX(-50%);
         }
     }
-
     .event-block-two {
         display: flex; align-items: center; margin-bottom: 80px; position: relative;
-        padding: 30px; // Add padding here
+        padding: 30px;
         z-index: 1;
-
         &:last-child { margin-bottom: 0; }
-
         .date-column {
             flex-shrink: 0; width: 150px; margin-right: 30px;
             .date-box {
                 background-color: $color-primary-red; color: $color-text-white;
                 padding: 15px; border-radius: $border-radius-medium; position: relative;
-                .date { font-family: $font-family-playfair; font-size: 1.8rem; font-weight: 700; line-height: 1;
+                .date {
+                    font-family: $font-family-playfair; font-size: 1.8rem; font-weight: 700; line-height: 1;
                     span { display: block; font-size: 2.5rem; }
                 }
-                .icon-flower-6, .icon-flower-7 { // Decorative small flowers
+                .icon-flower-6, .icon-flower-7 {
                     @include icon-style('img/decorations/flower-icon-6-small.svg', 30px, 30px);
                     position: absolute;
                     &:first-of-type { top: -15px; left: -15px; }
@@ -509,18 +427,25 @@ section {
             .content-column { text-align: right; }
         }
     }
+    /* Responsive styles for Story */
+    @media (max-width: $breakpoint-laptop) {
+        .timeline-wrapper::before { display: none; } /* Hide timeline on mobile */
+        .event-block-two, .event-block-two.style-two {
+            flex-direction: column;
+            .image-column { order: -1; } /* Move image to the top */
+            .content-column { text-align: center; }
+        }
+    }
 }
 
-/* --- 6. WEDDING PROGRAM SECTION (Revised with Hover Effect) --- */
+/* --- 6. WEDDING PROGRAM SECTION --- */
 #program {
     .sec-title { margin-bottom: 60px; }
-
     .program-grid {
         display: flex;
         justify-content: center;
         gap: 30px;
     }
-
     .program-block {
         flex: 1;
         max-width: 350px;
@@ -528,49 +453,33 @@ section {
         background-color: $color-light-bg-subtle;
         padding: 30px;
         text-align: center;
-        // 1. Add a transition for a smooth color change
         transition: $transition-medium; 
-        cursor: pointer; // Change cursor to indicate it's interactive
-
+        cursor: pointer;
         .image-box {
             position: relative;
             margin-bottom: 50px;
-
             .image {
-                // 1. Make the width responsive to the container
-                width: 100%;
-                // 2. But don't let it get bigger than the original size
-                max-width: 220px;
-                // 3. Force it to be a perfect square (1:1 ratio)
+                width: 100%; max-width: 220px;
                 aspect-ratio: 1 / 1;
-                // 4. Let the browser calculate the height automatically
                 height: auto;
-
                 border-radius: 50%;
                 overflow: hidden;
                 margin: 0 auto;
                 border: 5px solid $color-bronze;
                 img { width: 100%; height: 100%; object-fit: cover; }
             }
-
             .icon-shape {
-                position: absolute;
-                bottom: -30px;
-                left: 50%;
+                position: absolute; bottom: -30px; left: 50%;
                 transform: translateX(-50%);
-                width: 80px;
-                height: 80px;
+                width: 80px; height: 80px;
                 background-color: $color-text-white;
                 border-radius: 50%;
                 box-shadow: $shadow-light;
                 z-index: 1;
                 transition: $transition-medium;
             }
-
             .icon {
-                position: absolute;
-                bottom: -20px;
-                left: 50%;
+                position: absolute; bottom: -20px; left: 50%;
                 transform: translateX(-50%);
                 font-size: 2.5rem;
                 color: $color-primary-red;
@@ -580,7 +489,6 @@ section {
         }
         .content-box {
             .title, .date, .time, .address {
-                // Add transition for all text elements
                 transition: $transition-medium;
             }
             .title { font-family: $font-family-dancing; font-size: $h4-font; color: $color-text-dark; margin-bottom: 10px; }
@@ -589,38 +497,21 @@ section {
             .address { font-family: $font-family-questrial; font-size: 1.1rem; color: $color-text-dark; font-weight: 500; }
         }
     }
-
-    // --- 2. HOVER EFFECT STYLES ---
-    // This block applies all the "dark card" styles when the user hovers
     .program-block:hover {
         background-color: $color-text-dark;
-        transform: translateY(-5px); // Optional: add a slight lift effect
+        transform: translateY(-5px);
         box-shadow: $shadow-hover;
-        
-        // Change all text inside to light
         .content-box {
-            .title, .date, .time, .address {
-                color: $color-text-light;
-            }
+            .title, .date, .time, .address { color: $color-text-light; }
         }
-
-        // Change the icon's background to red
-        .image-box .icon-shape {
-            background-color: $color-primary-red;
-        }
-        // Change the icon's color to white
-        .image-box .icon {
-            color: $color-text-white;
-        }
+        .image-box .icon-shape { background-color: $color-primary-red; }
+        .image-box .icon { color: $color-text-white; }
     }
 
-    /* --- Responsive Stacking --- */
-    @media (max-width: $breakpoint-laptop) {
-        .program-grid {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
+    .google-map-wrapper {
+        width: 100%;
+        margin-top: 60px;
+        .map-title { font-size: $h4-font; margin-bottom: 20px; }
         .google-map {
             max-width: $auto-container-width; margin: 0 auto;
             border-radius: $border-radius-medium; overflow: hidden; box-shadow: $shadow-medium;
@@ -628,6 +519,14 @@ section {
         }
     }
 
+    /* Responsive Stacking for Program */
+    @media (max-width: $breakpoint-laptop) {
+        .program-grid {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
 
 /* --- 7. GALLERY SECTION --- */
 #gallery {
@@ -635,20 +534,31 @@ section {
     background-size: cover; background-attachment: fixed; background-blend-mode: multiply;
     background-color: rgba($color-medium-grey, 0.7); color: $color-text-light;
 
-    .sec-title { margin-bottom: 80px; } // Inherits light styling from general section rule
-
+    .sec-title { margin-bottom: 80px; }
     .images-box {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px; max-width: $auto-container-width; margin: 0 auto;
-
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: $auto-container-width;
+        margin: 0 auto;
         figure.image {
             overflow: hidden; border-radius: $border-radius-medium; box-shadow: $shadow-medium;
             transition: $transition-medium; cursor: pointer;
-            &:hover { transform: scale(1.05); box-shadow: $shadow-hover; border-color: $color-primary-red; }
-            img { width: 100%; height: 250px; object-fit: cover; display: block; }
-            // Specific image sizing/positioning, adjust as needed
-            &.image-1 { grid-column: span 2; grid-row: span 2; img { height: 520px; } }
-            &.image-5 { grid-column: span 2; grid-row: span 1; img { height: 250px; } }
+            &:hover { transform: scale(1.05); box-shadow: $shadow-hover; }
+            img { width: 100%; height: 100%; object-fit: cover; display: block; }
+            &.image-1 { grid-column: span 2; grid-row: span 2; }
+            &.image-5 { grid-column: span 2; }
+        }
+    }
+
+    /* Responsive styles for Gallery */
+    @media (max-width: $breakpoint-laptop) {
+        .images-box {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            figure.image, figure.image.image-1, figure.image.image-5 {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
         }
     }
 }
@@ -658,11 +568,9 @@ section {
     min-height: 50vh;
     background-attachment: fixed; background-size: cover; background-blend-mode: multiply;
     background-color: rgba($color-medium-grey, 0.6); color: $color-text-light;
-
     .icon-flowers { @include icon-style('img/decorations/flowers-bounce.svg', 150px, 150px, bounce-y 10s linear infinite);
         top: 20%; left: 5%; opacity: 0.5;
     }
-
     .content-box {
         max-width: 800px; margin: 0 auto; padding: 50px 0;
         .icon { font-size: 3rem; color: $color-primary-red; margin-bottom: 20px; }
@@ -671,223 +579,169 @@ section {
     }
 }
 
-/* --- 9. RSVP FORM SECTION (REVISED) --- */
+/* --- 9. RSVP FORM SECTION --- */
 #rsvp-form {
     background-color: $color-light-bg-subtle;
-    padding: $padding-y-section-lg 0;
-
-    .row { align-items: center; }
-    .form-column, .video-column {
-        padding: 40px; // Add padding here
-        position: relative;
-        overflow: hidden;
+    padding: $padding-y-section-lg $padding-x-content;
+    .rsvp-grid {
+        display: flex;
+        align-items: stretch;
+        gap: 40px;
     }
-    .icon-leave { @include icon-style('img/decorations/leaves-bounce.svg', 100px, 100px, bounce-x 8s linear infinite);
-        position: absolute; top: -30px; right: -30px; opacity: 0.5; z-index: 0;
-    }
-    .contact-form-one {
-        position: relative; z-index: 1;
-        .title { font-family: $font-family-dancing; font-size: $h4-font; color: $color-primary-red; margin-bottom: 30px; }
-        iframe { height: 800px; width: 100%; border: none; display: block; }
+    .rsvp-column-video { flex: 2; }
+    .rsvp-column-form { flex: 3; position: relative; }
+    .icon-leave {
+        @include icon-style('img/decorations/leaves-bounce.svg', 100px, 100px, bounce-x 8s linear infinite);
+        position: absolute; top: -30px; right: -15px; opacity: 0.5; z-index: 0;
     }
     .video-box {
-        position: relative; border-radius: $border-radius-large; overflow: hidden; box-shadow: $shadow-medium;
-        img { width: 100%; height: 100%; min-height: 400px; object-fit: cover; }
+        position: relative; width: 100%; height: 100%;
+        border-radius: $border-radius-large;
+        overflow: hidden; box-shadow: $shadow-medium;
+        aspect-ratio: 9 / 16;
+        .video-poster img { width: 100%; height: 100%; object-fit: cover; }
         .play-btn {
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            background-color: rgba($color-primary-red, 0.8); color: $color-text-white;
             width: 80px; height: 80px; line-height: 80px;
-            border-radius: 50%; font-size: 2.5rem; text-align: center; transition: $transition-fast;
+            border-radius: 50%; font-size: 2.5rem; text-align: center;
+            background-color: rgba($color-primary-red, 0.8);
+            color: $color-text-white;
+            transition: $transition-fast;
             &:hover { background-color: $color-bronze; transform: translate(-50%, -50%) scale(1.1); }
         }
-        .icon-leaves-27 { @include icon-style('img/decorations/leaves-rotate.svg', 120px, 120px, rotate-x 15s linear infinite);
+        .icon-leaves-27 {
+            @include icon-style('img/decorations/leaves-rotate.svg', 120px, 120px, rotate-x 15s linear infinite);
             position: absolute; bottom: -30px; right: -30px; opacity: 0.6;
         }
+    }
+    .form-wrapper {
+        position: relative; z-index: 1;
+        width: 100%; height: 100%;
+        display: flex; flex-direction: column;
+        .form-title {
+            font-family: $font-family-dancing; font-size: $h4-font;
+            color: $color-primary-red; margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+        .google-form {
+            width: 100%; flex-grow: 1;
+            border: 1px solid $color-muted-grey;
+            border-radius: $border-radius-medium;
+            min-height: 600px;
+        }
+    }
+    @media (max-width: $breakpoint-laptop) {
+        .rsvp-grid { flex-direction: column; }
+        .rsvp-column-video { margin-bottom: 40px; }
     }
 }
 
 /* --- 10. FOOD MENU SECTION --- */
 #menu-food {
-    background-color: $color-text-white; position: relative; overflow: hidden;
-
-    .food-menu {
-        max-width: 600px; margin: 0 auto; position: relative; z-index: 1;
-        padding-top: 100px; padding-bottom: 100px;
+    background-color: $color-light-bg-subtle;
+    .sec-title { margin-bottom: 60px; }
+    .menu-content-wrapper {
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 40px;
+        border: 2px solid $color-primary-red;
+        border-radius: $border-radius-medium;
     }
-    .menu-decor-top {
-        position: absolute; top: -50px; right: -50px;
-        width: 300px; height: 153px; z-index: 0;
-        img { width: 100%; height: 100%; object-fit: fill; }
-    }
-    .menu-decor-bottom {
-        position: absolute; bottom: -100px; transform: scale(-1) rotate(2deg);
-        left: -150px; width: 400px; height: 206px; z-index: 0;
-        img { width: 100%; height: 100%; object-fit: fill; }
-    }
-    h2 { font-family: $font-family-questrial; font-size: 3rem; letter-spacing: 0.25rem; margin-bottom: 20px; }
-    .sub-title.text-uppercase { // Specific for menu title
-        font-family: $font-family-questrial; font-size: 1.2rem; font-weight: 500;
-        color: $color-text-dark; display: block; margin-bottom: 40px;
+    .menu-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px 20px;
     }
     .menu-category {
-        margin-top: 3rem;
+        flex: 1 1 calc(50% - 10px);
+        min-width: 250px;
+        text-align: center;
         h3 {
-            font-family: $font-family-dancing; font-size: $h4-font; color: $color-bronze;
-            letter-spacing: 0.25rem; padding-bottom: 10px;
-            border-bottom: 1px dashed $color-muted-grey; margin-bottom: 15px;
+            font-family: $font-family-dancing;
+            font-size: $h4-font;
+            color: $color-bronze;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed $color-muted-grey;
         }
-        p { font-family: $font-family-questrial; font-size: 1.1rem; margin-bottom: 5px; color: $color-text-dark; }
+        p {
+            font-family: $font-family-questrial;
+            font-size: 1.1rem;
+            color: $color-text-dark;
+            margin-bottom: 5px;
+        }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        .menu-category {
+            flex: 1 1 100%;
+        }
+        .menu-content-wrapper {
+            padding: 30px;
+            border: none;
+        }
     }
 }
 
-/* --- 11. GIFTS / WISHES SECTION (REVISED) --- */
+/* --- 11. GIFTS / WISHES SECTION --- */
 #gifts {
-    background-color: $color-light-bg-subtle;
-    .sec-title {
-        margin-bottom: 50px;
-        h2 { margin-bottom: 20px; }
-        .gift-message { font-family: $font-family-questrial; font-size: 1.25rem; color: $color-text-dark; display: block; margin-top: 20px; }
+    background-color: $color-text-white;
+    .sec-title { margin-bottom: 20px; }
+    .gift-message {
+        max-width: 600px;
+        margin: 0 auto 50px;
+        font-size: 1.2rem;
+        line-height: 1.7;
+        text-align: center;
     }
-    .auto-container > .text-center { // Target the new text-center div
-        max-width: 400px; margin: 0 auto;
-        padding: 40px 20px;
-
-        .account-detail {
-            font-family: $font-family-questrial; font-size: 1.1rem;
-            display: block; margin-bottom: 5px; color: $color-text-dark;
-            strong { font-weight: 600; }
+    .gift-card-grid {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+    .gift-card {
+        background-color: $color-light-bg-subtle;
+        border-radius: $border-radius-medium;
+        box-shadow: $shadow-medium;
+        padding: 40px;
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+        border-top: 5px solid $color-primary-red;
+        transition: $transition-medium;
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: $shadow-hover;
         }
-        .qr-code {
-            width: 250px; height: 250px; object-fit: contain;
-            border: 3px solid $color-primary-red; border-radius: $border-radius-small; margin-top: 30px;
+    }
+    .card-title {
+        font-family: $font-family-dancing;
+        color: $color-text-dark;
+        font-size: $h4-font;
+        margin-bottom: 25px;
+    }
+    .qr-code {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: $border-radius-small;
+        border: 2px solid $color-muted-grey;
+        margin-bottom: 25px;
+    }
+    .account-details {
+        p {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        strong {
+            color: $color-text-dark;
         }
     }
-}
-
-/* --- RESPONSIVE ADJUSTMENTS (Sections) --- */
-@media (max-width: $breakpoint-desktop-lg) {
-    #overview .name { font-size: 5rem; }
-    #overview .text { font-size: 1.5rem; }
-    #countdown .time-countdown .counter-column .count { font-size: 3.5rem; }
-    #invitation-details h3 { font-size: $h3-font; }
-    #invitation-details .vs-attendance-name-text { font-size: $h4-font; }
-    #couple .couple-block .image-box .image { height: 350px; }
-    #story .event-block-two .date-column { width: 120px; }
-    #story .event-block-two .image-column { width: 180px; }
-    #program .program-block .image-box .image { height: 180px; }
-    #gallery .images-box figure.image img { height: 220px; }
-    #cta .content-box .title { font-size: $h3-font; }
-    #rsvp-form .contact-form-one iframe { height: 700px; }
-    #menu-food .menu-category h3 { font-size: $h5-font; }
-}
-
-@media (max-width: $breakpoint-laptop) {
-    section { padding: $padding-y-section-md $padding-x-content-md; }
-    #overview .name { font-size: 4rem; }
-    #overview .text { font-size: 1.3rem; }
-    #countdown .time-countdown .counter-column .count { font-size: 3rem; }
-    #invitation-details h3 { font-size: $h4-font; }
-    #invitation-details .vs-attendance-name-text { font-size: $h5-font; }
-    #invitation-details .invitator-name { font-size: $h5-font; }
-    #invitation-details .closing-remark { font-size: $h5-font; }
-    #couple .couple-block .image-box .image { height: 300px; }
-    #couple .couple-block .content-box .name { font-size: $h4-font; }
-    #couple .couple-block .content-box .text { font-size: 1rem; }
-    #story .timeline-wrapper { margin-left: 0; margin-right: 0; }
-    #story .event-block-two, #story .event-block-two.style-two { // Stack on smaller screens
-        flex-direction: column; text-align: center;
-        .date-column, .image-column { margin: 0 0 20px 0; width: 80%; max-width: 300px; }
-        .content-column { text-align: center; }
-    }
-    #program .program-block { max-width: 400px; margin-left: auto; margin-right: auto; }
-    #program .google-map iframe { height: 400px; }
-    #gallery .images-box {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        .image-1, .image-5 { grid-column: span 1; grid-row: span 1; img { height: 200px; } }
-    }
-    #cta .content-box .title { font-size: $h4-font; }
-    #rsvp-form .contact-form-one iframe { height: 600px; }
-    #rsvp-form .video-box img { min-height: 300px; }
-}
-
-@media (max-width: $breakpoint-tablet) {
-    section { padding: $padding-y-section-sm $padding-x-content-sm; }
-    #overview .name { font-size: 3rem; }
-    #overview .icon-heart { width: 30px; height: 30px; margin: 0 10px; }
-    #overview .text { font-size: 1.1rem; }
-    #countdown .time-countdown .counter-column .count { font-size: 2.5rem; }
-    #invitation-details .col-lg-6 { padding: 0 10px; }
-    #invitation-details .row.text-center { margin-top: 30px; padding-bottom: 20px; margin-bottom: 20px; }
-    #couple .couple-block { padding: 20px; }
-    #couple .couple-block .image-box .image { height: 250px; }
-    #couple .couple-block .image-box .icon-flowers-2 { width: 60px; height: 60px; bottom: -15px; right: -15px; }
-    #couple .couple-block .content-box .name { font-size: $h5-font; }
-    #story .timeline-wrapper::before { left: 50%; }
-    #story .event-block-two { padding: 20px; flex-direction: column; text-align: center; }
-    #story .event-block-two .date-column, #story .event-block-two .image-column { margin-bottom: 15px; }
-    #program .program-block { padding: 20px; }
-    #program .program-block .image-box .image { height: 150px; }
-    #program .program-block .image-box .icon { font-size: 2rem; bottom: -5px; }
-    #program .program-block .image-box .icon-shape { width: 60px; height: 60px; bottom: -15px; }
-    #program .google-map iframe { height: 300px; }
-    #gallery .images-box figure.image img { height: 180px; }
-    #cta .content-box .title { font-size: $h5-font; }
-    #cta .content-box .text { font-size: 1rem; }
-    #rsvp-form .form-column, #rsvp-form .video-column { padding: 25px; }
-    #rsvp-form .contact-form-one iframe { height: 500px; }
-    #rsvp-form .video-box img { min-height: 250px; }
-    #menu-food .food-menu { padding-top: 80px; padding-bottom: 80px; }
-    #menu-food .menu-category h3 { font-size: $h6-font; }
-    #menu-food .menu-category p { font-size: 1rem; }
-    #gifts .sec-title h2 { font-size: 2rem; }
-    #gifts .sec-title .gift-message { font-size: 1rem; }
-    #gifts .auto-container > .text-center { padding: 25px 15px; }
-    #gifts .auto-container > .text-center .account-detail { font-size: 1rem; }
-    #gifts .auto-container > .text-center .qr-code { width: 200px; height: 200px; }
-}
-
-@media (max-width: $breakpoint-phone) {
-    #overview .name { font-size: 2.5rem; }
-    #overview .icon-heart { width: 25px; height: 25px; margin: 0 5px; }
-    #overview .text { font-size: 1rem; }
-    #countdown .time-countdown .counter-column .count { font-size: 2rem; }
-    #countdown .time-countdown .counter-column sub { font-size: 0.8rem; }
-    #invitation-details .invitation-main-img { max-width: 300px; }
-    #invitation-details .row.text-center { flex-direction: column; .col-4 { width: 100%; margin-bottom: 15px; } }
-    #invitation-details .invitator-name { font-size: $h6-font; }
-    #invitation-details .closing-remark { font-size: $h6-font; }
-    #couple .couple-block {
-        padding: 15px;
-        .image-box .image { height: 200px; }
-        .image-box .icon-border { width: 40px; height: 40px; top: -10px; left: -10px; }
-        .image-box .icon-flowers-2 { width: 50px; height: 50px; bottom: -10px; right: -10px; }
-        .content-box .name { font-size: $h6-font; }
-    }
-    #story .timeline-wrapper::before { left: 50%; }
-    #story .event-block-two { padding: 15px; }
-    #story .event-block-two .date-column .date-box .date { font-size: 1.5rem; span { font-size: 2rem; } }
-    #story .event-block-two .image-column { width: 100%; max-width: 200px; }
-    #story .event-block-two .content-column .content-box h4.title { font-size: $h6-font; }
-    #program .program-block { padding: 15px; }
-    #program .program-block .image-box .image { height: 120px; }
-    #program .program-block .image-box .icon { font-size: 2rem; bottom: -5px; }
-    #program .program-block .image-box .icon-shape { width: 60px; height: 60px; bottom: -15px; }
-    #program .google-map iframe { height: 250px; }
-    #gallery .images-box { grid-template-columns: 1fr; figure.image img { height: 150px; } }
-    #cta .content-box .title { font-size: $h6-font; }
-    #cta .content-box .text { font-size: 0.9rem; }
-    #rsvp-form .form-column, #rsvp-form .video-column { padding: 20px; }
-    #rsvp-form .contact-form-one iframe { height: 400px; }
-    #rsvp-form .video-box img { min-height: 200px; }
-    #rsvp-form .video-box .play-btn { width: 60px; height: 60px; line-height: 60px; font-size: 2rem; }
-    #menu-food h2 { font-size: 2.2rem; }
-    #menu-food .sub-title.text-uppercase { font-size: 1rem; margin-bottom: 20px; }
-    #menu-food .menu-category { margin-top: 2rem; }
-    #menu-food .menu-category h3 { font-size: 1.1rem; }
-    #menu-food .menu-category p { font-size: 0.95rem; }
-    #gifts .sec-title h2 { font-size: 2rem; }
-    #gifts .sec-title .gift-message { font-size: 1rem; }
-    #gifts .auto-container > .text-center { padding: 25px 15px; }
-    #gifts .auto-container > .text-center .account-detail { font-size: 1rem; }
-    #gifts .auto-container > .text-center .qr-code { width: 200px; height: 200px; }
 }

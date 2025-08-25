@@ -30,8 +30,8 @@
                 <li><a href="#story">Chuyện Chúng Mình</a></li>
                 <li><a href="#gallery">Thư Viện Ảnh</a></li>
                 <li><a href="#program">Chương Trình Tiệc</a></li>
-                <li><a href="#menu-food">Thực Đơn</a></li>
                 <li><a href="#rsvp-form">RSVP</a></li>
+                <li><a href="#menu-food">Thực Đơn</a></li>
                 <li><a href="#gifts">Mừng Cưới</a></li>
             </ul>
             <!-- You might want to add a mobile menu icon here -->
@@ -407,93 +407,116 @@
             </div>
         </section>
 
-        <!-- Section 9: RSVP Form (Revised) -->
-        <section id="rsvp-form" class="contact-section">
-            <div class="auto-container">
-                <div class="row">
-                    <div class="form-column col-lg-6 col-md-12 col-sm-12 order-lg-2" data-aos="fade-right" data-aos-delay="300">
-                        <div class="icon-leave bounce-x"></div>
-                        <div class="contact-form-one">
-                            <h6 class="title">Bạn sẽ đến chứ?</h6>
-                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe994qwiwsE1zqoK9xFsVpZt3p2IsZTZAPs8JEXyC0JAQFzYQ/viewform?embedded=true" width="640" height="1807" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                        </div>
+        <!-- Section 9: RSVP Form (Place this OUTSIDE any .auto-container) -->
+        <section id="rsvp-form">
+            <div class="rsvp-grid">
+                <!-- Left Column: Video -->
+                <div class="rsvp-column rsvp-column-video" data-aos="fade-right">
+                    <div class="video-box">
+                        <figure class="video-poster">
+                            <img src="img/decorations/contact-video-poster.jpg" alt="Video poster">
+                        </figure>
+                        <a href="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID" class="play-btn" data-fancybox="">
+                            <i class="icon fa fa-play"></i>
+                        </a>
+                        <div class="icon-leaves-27 rotate-x"></div>
                     </div>
+                </div>
 
-                    <div class="video-column col-lg-6 col-md-12" data-aos="fade-left">
-                        <div class="video-box">
-                            <figure class="image">
-                                <img src="img/decorations/contact-video-poster.jpg" alt="Video poster">
-                            </figure>
-                            <a href="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID" class="play-btn vs-video-btn" data-fancybox=""><i class="icon fa fa-play"></i></a>
-                            <div class="icon-leaves-27 rotate-x"></div>
-                        </div>
+                <!-- Right Column: Form -->
+                <div class="rsvp-column rsvp-column-form" data-aos="fade-left" data-aos-delay="300">
+                    <div class="icon-leave bounce-x"></div>
+                    <div class="form-wrapper">
+                        <h6 class="form-title">Bạn sẽ đến chứ?</h6>
+                        <iframe class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSe994qwiwsE1zqoK9xFsVpZt3p2IsZTZAPs8JEXyC0JAQFzYQ/viewform?embedded=true" frameborder="0">Loading…</iframe>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 10: Food Menu (No change needed here) -->
-        <section id="menu-food" class="menu-section">
-            <div class="food-menu">
-                <div class="menu-decor-top">
-                    <img src="img/decorations/top-menu.svg" alt="Decorative element">
-                </div>
-                <div class="menu-decor-bottom">
-                    <img src="img/decorations/bottom-menu.svg" alt="Decorative element">
-                </div>
-                <h2>Thực đơn đón tiếp</h2>
-                <span class="sub-title text-uppercase">[Tên Cô Dâu] & [Tên Chú Rể]</span>
-
-                <div class="mt-5 menu-category">
-                    <h3 class="text-uppercase">Súp</h3>
-                    <p class="mb-0">Súp cần tây và bánh mì rang</p>
-                    <p class="mb-0">Súp bí ngô với sô-cô-la</p>
-                </div>
-
-                <div class="mt-5 menu-category">
-                    <h3 class="text-uppercase">ĂN NHẸ</h3>
-                    <p class="mb-0">Bánh kẹp gà</p>
-                    <p class="mb-0">Nấm nhồi thịt</p>
-                </div>
-
-                <div class="mt-5 menu-category">
-                    <h3 class="text-uppercase">MÓN CHÍNH</h3>
-                    <p class="mb-0">Thịt gà xông khói</p>
-                    <p class="mb-0">Sò điệp rưới xốt cam</p>
-                </div>
-
-                <div class="mt-5 menu-category">
-                    <h3 class="text-uppercase">TRÁNG MIỆNG</h3>
-                    <p class="mb-0">Bánh donut</p>
-                    <p class="mb-0">Bánh mì cuộn hương quế</p>
-                </div>
-
-                <div class="mt-5 menu-category">
-                    <h3 class="text-uppercase">ĐỒ UỐNG</h3>
-                    <p class="mb-0">Nước có ga</p>
-                    <p class="mb-0">Bia Tiger</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 11: Gifts / Wishes (Revised) -->
-        <section id="gifts" class="gift-section">
+        <!-- Section 10: Food Menu (Rewritten for better layout) -->
+        <section id="menu-food">
             <div class="auto-container">
                 <div class="sec-title text-center">
-                    <div class="icon-divider"></div>
-                    <span class="sub-title">Gửi lời chúc</span>
-                    <h2>Đến cô dâu & chú rể</h2>
-                    <span class="gift-message">Gửi mừng cưới sớm cho dâu và rể bằng mã QR dưới đây bạn yêu nhé</span>
+                    <span class="sub-title">Thực đơn</span>
+                    <h2>Tiệc cưới</h2>
                 </div>
 
-                <div class="text-center">
-                    <span class="account-detail">Số tài khoản: [Số Tài Khoản]</span>
-                    <span class="account-detail mt-1">Chủ tài khoản: [Tên Cô Dâu hoặc Chú Rể]</span>
-                    <span class="account-detail mt-1">Ngân hàng: <strong>[Tên Ngân Hàng]</strong></span>
-                    <img src="img/decorations/e-invite-qr.svg" alt="QR Code" class="mt-4 qr-code">
+                <div class="menu-content-wrapper">
+                    <div class="menu-grid">
+                        <div class="menu-category">
+                            <h3>Súp</h3>
+                            <p>Súp cần tây và bánh mì rang</p>
+                            <p>Súp bí ngô với sô-cô-la</p>
+                        </div>
+
+                        <div class="menu-category">
+                            <h3>Ăn Nhẹ</h3>
+                            <p>Bánh kẹp gà</p>
+                            <p>Nấm nhồi thịt</p>
+                        </div>
+
+                        <div class="menu-category">
+                            <h3>Món Chính</h3>
+                            <p>Thịt gà xông khói</p>
+                            <p>Sò điệp rưới xốt cam</p>
+                        </div>
+
+                        <div class="menu-category">
+                            <h3>Tráng Miệng</h3>
+                            <p>Bánh donut</p>
+                            <p>Bánh mì cuộn hương quế</p>
+                        </div>
+
+                        <div class="menu-category">
+                            <h3>Đồ Uống</h3>
+                            <p>Nước có ga</p>
+                            <p>Bia Tiger</p>
+                        </div>
+
+                        <!-- This is an empty item to help balance the grid if you have an odd number of categories -->
+                        <div class="menu-category"></div>
+                    </div>
                 </div>
             </div>
         </section>
+
+<!-- Section 11: Gifts / Wishes (Rewritten) -->
+<section id="gifts">
+    <div class="auto-container">
+        <div class="sec-title text-center">
+            <span class="sub-title">Gửi lời chúc</span>
+            <h2>Mừng cưới</h2>
+        </div>
+        <p class="gift-message">
+            Sự hiện diện của bạn là món quà lớn nhất! <br>
+            Nếu bạn muốn gửi quà mừng, có thể gửi qua thông tin dưới đây nhé.
+        </p>
+
+        <div class="gift-card-grid">
+            <!-- Bride's Gift Card -->
+            <div class="gift-card">
+                <h3 class="card-title">Mừng Cô Dâu</h3>
+                <img src="img/decorations/qr-bride.svg" alt="QR Code for Bride" class="qr-code">
+                <div class="account-details">
+                    <p><strong>Ngân hàng:</strong> [Tên Ngân Hàng]</p>
+                    <p><strong>Số tài khoản:</strong> [Số Tài Khoản]</p>
+                    <p><strong>Chủ tài khoản:</strong> [Tên Cô Dâu]</p>
+                </div>
+            </div>
+            <!-- Groom's Gift Card -->
+            <div class="gift-card">
+                <h3 class="card-title">Mừng Chú Rể</h3>
+                <img src="img/decorations/qr-groom.svg" alt="QR Code for Groom" class="qr-code">
+                <div class="account-details">
+                    <p><strong>Ngân hàng:</strong> [Tên Ngân Hàng]</p>
+                    <p><strong>Số tài khoản:</strong> [Số Tài Khoản]</p>
+                    <p><strong>Chủ tài khoản:</strong> [Tên Chú Rể]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     </main>
 
     <footer>
@@ -504,12 +527,12 @@
                 <li><a href="#story">Chuyện Chúng Mình</a></li>
                 <li><a href="#gallery">Thư Viện Ảnh</a></li>
                 <li><a href="#program">Chương Trình Tiệc</a></li>
-                <li><a href="#menu-food">Thực Đơn</a></li>
                 <li><a href="#rsvp-form">RSVP</a></li>
+                <li><a href="#menu-food">Thực Đơn</a></li>
                 <li><a href="#gifts">Mừng Cưới</a></li>
             </ul>
             <p class="copyright">Thank you for being a part of our journey! &hearts;</p>
-            <p class="copyright">&copy; [Year] [Couple's Names]</p>
+            <p class="copyright">&copy; 2025 Diệu & Trí</p>
         </div>
     </footer>
 

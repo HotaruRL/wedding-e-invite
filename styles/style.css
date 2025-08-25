@@ -351,6 +351,7 @@ section .icon-divider {
   color: hsl(0, 0%, 98%);
   display: flex;
   align-items: center;
+  /* Responsive adjustments for Banner */
 }
 #overview .bg-pattern-1 {
   position: absolute;
@@ -437,8 +438,6 @@ section .icon-divider {
   font-weight: 300;
   margin-top: 50px;
 }
-
-/* --- RESPONSIVE ADJUSTMENTS for the Banner --- */
 @media (max-width: 1280px) {
   #overview .name {
     flex-direction: column;
@@ -474,11 +473,12 @@ section .icon-divider {
     height: 270px;
   }
 }
+
 /* --- 2. COUNTDOWN SECTION --- */
 #countdown {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px 0;
   background-color: hsl(0, 0%, 95%);
+  /* Responsive adjustments for Countdown */
 }
 #countdown .caption-box .sec-title {
   margin-bottom: 0;
@@ -487,14 +487,13 @@ section .icon-divider {
   font-family: "Charmonman", cursive;
   font-size: 1.6rem;
   color: #c0893b;
-  display: block;
   margin-bottom: 0;
 }
 #countdown .caption-box .icon-divider {
   margin: 1px auto;
 }
 #countdown .time-counter {
-  margin-top: 0px;
+  margin-top: 0;
 }
 #countdown .time-counter .time-countdown {
   display: flex;
@@ -519,8 +518,6 @@ section .icon-divider {
   color: hsl(0, 0%, 12%);
   margin-top: 10px;
 }
-
-/* --- RESPONSIVE ADJUSTMENTS for Countdown Section --- */
 @media (max-width: 768px) {
   #countdown .time-countdown {
     gap: 20px;
@@ -534,8 +531,7 @@ section .icon-divider {
 }
 @media (max-width: 600px) {
   #countdown {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 0;
   }
   #countdown .caption-box .sec-title .text.sub-title {
     font-size: 1.8rem;
@@ -551,9 +547,10 @@ section .icon-divider {
     margin-top: 5px;
   }
 }
-/* --- 3. INVITATION DETAILS SECTION (Rewritten for Balance) --- */
+
+/* --- 3. INVITATION DETAILS SECTION --- */
 #invitation-details {
-  /* --- RESPONSIVE STYLES --- */
+  /* Responsive styles for Invitation */
 }
 #invitation-details .invitation-container {
   max-width: 1170px;
@@ -568,14 +565,12 @@ section .icon-divider {
 #invitation-details .invitation-column-image {
   flex: 1;
   min-width: 300px;
+  text-align: center;
 }
 #invitation-details .invitation-column-text {
   flex: 1;
   min-width: 300px;
   text-align: center;
-}
-#invitation-details .invitation-main-img {
-  width: 100%;
 }
 #invitation-details .invitation-main-img img {
   width: 100%;
@@ -586,7 +581,8 @@ section .icon-divider {
   font-family: "Charmonman", cursive;
   font-size: bold 4.209rem/1.2 "Questrial", sans-serif;
   color: hsl(342, 88%, 68%);
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 #invitation-details .parents-info {
   padding-bottom: 25px;
@@ -634,7 +630,8 @@ section .icon-divider {
   color: hsl(342, 88%, 68%);
 }
 #invitation-details .couple-names .divider-heart {
-  width: 100px;
+  width: 60px;
+  flex-shrink: 0;
 }
 #invitation-details .event-details .event-time {
   font-size: 1.2rem;
@@ -643,6 +640,7 @@ section .icon-divider {
 #invitation-details .event-details .event-date {
   font-weight: bold;
   margin-top: 1rem;
+  font-size: 1.25rem;
 }
 #invitation-details .event-details .closing-remark {
   font-family: "Charmonman", cursive;
@@ -660,9 +658,9 @@ section .icon-divider {
   }
 }
 
-/* --- 4. COUPLE SECTION (Revised with Divider) --- */
+/* --- 4. COUPLE SECTION --- */
 #couple {
-  /* --- RESPONSIVE STYLES for Stacking --- */
+  /* Responsive styles for Couple */
 }
 #couple .auto-container {
   max-width: 1170px;
@@ -756,11 +754,12 @@ section .icon-divider {
   }
 }
 
-/* --- 5. OUR STORY SECTION (TIMELINE) (REVISED) --- */
+/* --- 5. OUR STORY SECTION (TIMELINE) --- */
 #story {
   background-color: hsl(0, 0%, 95%);
   position: relative;
   overflow: hidden;
+  /* Responsive styles for Story */
 }
 #story .anim-icons .icon-flowers-6 {
   content: "";
@@ -916,10 +915,26 @@ section .icon-divider {
 #story .event-block-two.style-two .content-column {
   text-align: right;
 }
+@media (max-width: 992px) {
+  #story { /* Hide timeline on mobile */ }
+  #story .timeline-wrapper::before {
+    display: none;
+  }
+  #story .event-block-two, #story .event-block-two.style-two {
+    flex-direction: column;
+    /* Move image to the top */
+  }
+  #story .event-block-two .image-column, #story .event-block-two.style-two .image-column {
+    order: -1;
+  }
+  #story .event-block-two .content-column, #story .event-block-two.style-two .content-column {
+    text-align: center;
+  }
+}
 
-/* --- 6. WEDDING PROGRAM SECTION (Revised with Hover Effect) --- */
+/* --- 6. WEDDING PROGRAM SECTION --- */
 #program {
-  /* --- Responsive Stacking --- */
+  /* Responsive Stacking for Program */
 }
 #program .sec-title {
   margin-bottom: 60px;
@@ -1029,23 +1044,31 @@ section .icon-divider {
 #program .program-block:hover .image-box .icon {
   color: hsl(0, 0%, 100%);
 }
-@media (max-width: 992px) {
-  #program .program-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+#program .google-map-wrapper {
+  width: 100%;
+  margin-top: 60px;
 }
-#program .google-map {
+#program .google-map-wrapper .map-title {
+  font-size: bold 2.369rem/1.4 "Questrial", sans-serif;
+  margin-bottom: 20px;
+}
+#program .google-map-wrapper .google-map {
   max-width: 1170px;
   margin: 0 auto;
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
-#program .google-map iframe {
+#program .google-map-wrapper .google-map iframe {
   width: 100%;
   height: 500px;
   border: none;
+}
+@media (max-width: 992px) {
+  #program .program-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* --- 7. GALLERY SECTION --- */
@@ -1056,6 +1079,7 @@ section .icon-divider {
   background-blend-mode: multiply;
   background-color: rgba(51, 51, 51, 0.7);
   color: hsl(0, 0%, 98%);
+  /* Responsive styles for Gallery */
 }
 #gallery .sec-title {
   margin-bottom: 80px;
@@ -1077,11 +1101,10 @@ section .icon-divider {
 #gallery .images-box figure.image:hover {
   transform: scale(1.05);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  border-color: hsl(342, 88%, 68%);
 }
 #gallery .images-box figure.image img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
@@ -1090,15 +1113,17 @@ section .icon-divider {
   grid-column: span 2;
   grid-row: span 2;
 }
-#gallery .images-box figure.image.image-1 img {
-  height: 520px;
-}
 #gallery .images-box figure.image.image-5 {
   grid-column: span 2;
-  grid-row: span 1;
 }
-#gallery .images-box figure.image.image-5 img {
-  height: 250px;
+@media (max-width: 992px) {
+  #gallery .images-box {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  #gallery .images-box figure.image, #gallery .images-box figure.image.image-1, #gallery .images-box figure.image.image-5 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
 }
 
 /* --- 8. CALL TO ACTION SECTION --- */
@@ -1147,18 +1172,22 @@ section .icon-divider {
   font-weight: 300;
 }
 
-/* --- 9. RSVP FORM SECTION (REVISED) --- */
+/* --- 9. RSVP FORM SECTION --- */
 #rsvp-form {
   background-color: hsl(0, 0%, 95%);
-  padding: 60px 0;
+  padding: 60px 8%;
 }
-#rsvp-form .row {
-  align-items: center;
+#rsvp-form .rsvp-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 40px;
 }
-#rsvp-form .form-column, #rsvp-form .video-column {
-  padding: 40px;
+#rsvp-form .rsvp-column-video {
+  flex: 2;
+}
+#rsvp-form .rsvp-column-form {
+  flex: 3;
   position: relative;
-  overflow: hidden;
 }
 #rsvp-form .icon-leave {
   content: "";
@@ -1171,36 +1200,22 @@ section .icon-divider {
   animation: bounce-x 8s linear infinite;
   position: absolute;
   top: -30px;
-  right: -30px;
+  right: -15px;
   opacity: 0.5;
   z-index: 0;
 }
-#rsvp-form .contact-form-one {
-  position: relative;
-  z-index: 1;
-}
-#rsvp-form .contact-form-one .title {
-  font-family: "Charmonman", cursive;
-  font-size: bold 2.369rem/1.4 "Questrial", sans-serif;
-  color: hsl(342, 88%, 68%);
-  margin-bottom: 30px;
-}
-#rsvp-form .contact-form-one iframe {
-  height: 800px;
-  width: 100%;
-  border: none;
-  display: block;
-}
 #rsvp-form .video-box {
   position: relative;
+  width: 100%;
+  height: 100%;
   border-radius: 3rem;
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  aspect-ratio: 9/16;
 }
-#rsvp-form .video-box img {
+#rsvp-form .video-box .video-poster img {
   width: 100%;
   height: 100%;
-  min-height: 400px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1209,14 +1224,14 @@ section .icon-divider {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(245.208, 101.592, 144.6768, 0.8);
-  color: hsl(0, 0%, 100%);
   width: 80px;
   height: 80px;
   line-height: 80px;
   border-radius: 50%;
   font-size: 2.5rem;
   text-align: center;
+  background-color: rgba(245.208, 101.592, 144.6768, 0.8);
+  color: hsl(0, 0%, 100%);
   transition: all 0.3s ease-in-out;
 }
 #rsvp-form .video-box .play-btn:hover {
@@ -1237,512 +1252,148 @@ section .icon-divider {
   right: -30px;
   opacity: 0.6;
 }
+#rsvp-form .form-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#rsvp-form .form-wrapper .form-title {
+  font-family: "Charmonman", cursive;
+  font-size: bold 2.369rem/1.4 "Questrial", sans-serif;
+  color: hsl(342, 88%, 68%);
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+#rsvp-form .form-wrapper .google-form {
+  width: 100%;
+  flex-grow: 1;
+  border: 1px solid #eee;
+  border-radius: 1.5rem;
+  min-height: 600px;
+}
+@media (max-width: 992px) {
+  #rsvp-form .rsvp-grid {
+    flex-direction: column;
+  }
+  #rsvp-form .rsvp-column-video {
+    margin-bottom: 40px;
+  }
+}
 
 /* --- 10. FOOD MENU SECTION --- */
 #menu-food {
-  background-color: hsl(0, 0%, 100%);
-  position: relative;
-  overflow: hidden;
+  background-color: hsl(0, 0%, 95%);
 }
-#menu-food .food-menu {
-  max-width: 600px;
+#menu-food .sec-title {
+  margin-bottom: 60px;
+}
+#menu-food .menu-content-wrapper {
+  max-width: 900px;
+  width: 100%;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 40px;
+  border: 2px solid hsl(342, 88%, 68%);
+  border-radius: 1.5rem;
 }
-#menu-food .menu-decor-top {
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 300px;
-  height: 153px;
-  z-index: 0;
-}
-#menu-food .menu-decor-top img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
-}
-#menu-food .menu-decor-bottom {
-  position: absolute;
-  bottom: -100px;
-  transform: scale(-1) rotate(2deg);
-  left: -150px;
-  width: 400px;
-  height: 206px;
-  z-index: 0;
-}
-#menu-food .menu-decor-bottom img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
-}
-#menu-food h2 {
-  font-family: "Questrial", sans-serif;
-  font-size: 3rem;
-  letter-spacing: 0.25rem;
-  margin-bottom: 20px;
-}
-#menu-food .sub-title.text-uppercase {
-  font-family: "Questrial", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: hsl(0, 0%, 12%);
-  display: block;
-  margin-bottom: 40px;
+#menu-food .menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 20px;
 }
 #menu-food .menu-category {
-  margin-top: 3rem;
+  flex: 1 1 calc(50% - 10px);
+  min-width: 250px;
+  text-align: center;
 }
 #menu-food .menu-category h3 {
   font-family: "Charmonman", cursive;
   font-size: bold 2.369rem/1.4 "Questrial", sans-serif;
   color: #c0893b;
-  letter-spacing: 0.25rem;
+  margin-bottom: 15px;
   padding-bottom: 10px;
   border-bottom: 1px dashed #eee;
-  margin-bottom: 15px;
 }
 #menu-food .menu-category p {
   font-family: "Questrial", sans-serif;
   font-size: 1.1rem;
+  color: hsl(0, 0%, 12%);
   margin-bottom: 5px;
-  color: hsl(0, 0%, 12%);
-}
-
-/* --- 11. GIFTS / WISHES SECTION (REVISED) --- */
-#gifts {
-  background-color: hsl(0, 0%, 95%);
-}
-#gifts .sec-title {
-  margin-bottom: 50px;
-}
-#gifts .sec-title h2 {
-  margin-bottom: 20px;
-}
-#gifts .sec-title .gift-message {
-  font-family: "Questrial", sans-serif;
-  font-size: 1.25rem;
-  color: hsl(0, 0%, 12%);
-  display: block;
-  margin-top: 20px;
-}
-#gifts .auto-container > .text-center {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-#gifts .auto-container > .text-center .account-detail {
-  font-family: "Questrial", sans-serif;
-  font-size: 1.1rem;
-  display: block;
-  margin-bottom: 5px;
-  color: hsl(0, 0%, 12%);
-}
-#gifts .auto-container > .text-center .account-detail strong {
-  font-weight: 600;
-}
-#gifts .auto-container > .text-center .qr-code {
-  width: 250px;
-  height: 250px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  border: 3px solid hsl(342, 88%, 68%);
-  border-radius: 0.5rem;
-  margin-top: 30px;
-}
-
-/* --- RESPONSIVE ADJUSTMENTS (Sections) --- */
-@media (max-width: 1280px) {
-  #overview .name {
-    font-size: 5rem;
-  }
-  #overview .text {
-    font-size: 1.5rem;
-  }
-  #countdown .time-countdown .counter-column .count {
-    font-size: 3.5rem;
-  }
-  #invitation-details h3 {
-    font-size: bold 3.157rem/1.3 "Questrial", sans-serif;
-  }
-  #invitation-details .vs-attendance-name-text {
-    font-size: bold 2.369rem/1.4 "Questrial", sans-serif;
-  }
-  #couple .couple-block .image-box .image {
-    height: 350px;
-  }
-  #story .event-block-two .date-column {
-    width: 120px;
-  }
-  #story .event-block-two .image-column {
-    width: 180px;
-  }
-  #program .program-block .image-box .image {
-    height: 180px;
-  }
-  #gallery .images-box figure.image img {
-    height: 220px;
-  }
-  #cta .content-box .title {
-    font-size: bold 3.157rem/1.3 "Questrial", sans-serif;
-  }
-  #rsvp-form .contact-form-one iframe {
-    height: 700px;
-  }
-  #menu-food .menu-category h3 {
-    font-size: bold 1.777rem/1.5 "Questrial", sans-serif;
-  }
-}
-@media (max-width: 992px) {
-  section {
-    padding: 50px 6%;
-  }
-  #overview .name {
-    font-size: 4rem;
-  }
-  #overview .text {
-    font-size: 1.3rem;
-  }
-  #countdown .time-countdown .counter-column .count {
-    font-size: 3rem;
-  }
-  #invitation-details h3 {
-    font-size: bold 2.369rem/1.4 "Questrial", sans-serif;
-  }
-  #invitation-details .vs-attendance-name-text {
-    font-size: bold 1.777rem/1.5 "Questrial", sans-serif;
-  }
-  #invitation-details .invitator-name {
-    font-size: bold 1.777rem/1.5 "Questrial", sans-serif;
-  }
-  #invitation-details .closing-remark {
-    font-size: bold 1.777rem/1.5 "Questrial", sans-serif;
-  }
-  #couple .couple-block .image-box .image {
-    height: 300px;
-  }
-  #couple .couple-block .content-box .name {
-    font-size: bold 2.369rem/1.4 "Questrial", sans-serif;
-  }
-  #couple .couple-block .content-box .text {
-    font-size: 1rem;
-  }
-  #story .timeline-wrapper {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  #story .event-block-two, #story .event-block-two.style-two {
-    flex-direction: column;
-    text-align: center;
-  }
-  #story .event-block-two .date-column, #story .event-block-two .image-column, #story .event-block-two.style-two .date-column, #story .event-block-two.style-two .image-column {
-    margin: 0 0 20px 0;
-    width: 80%;
-    max-width: 300px;
-  }
-  #story .event-block-two .content-column, #story .event-block-two.style-two .content-column {
-    text-align: center;
-  }
-  #program .program-block {
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  #program .google-map iframe {
-    height: 400px;
-  }
-  #gallery .images-box {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-  #gallery .images-box .image-1, #gallery .images-box .image-5 {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-  #gallery .images-box .image-1 img, #gallery .images-box .image-5 img {
-    height: 200px;
-  }
-  #cta .content-box .title {
-    font-size: bold 2.369rem/1.4 "Questrial", sans-serif;
-  }
-  #rsvp-form .contact-form-one iframe {
-    height: 600px;
-  }
-  #rsvp-form .video-box img {
-    min-height: 300px;
-  }
 }
 @media (max-width: 768px) {
-  section {
-    padding: 40px 4%;
-  }
-  #overview .name {
-    font-size: 3rem;
-  }
-  #overview .icon-heart {
-    width: 30px;
-    height: 30px;
-    margin: 0 10px;
-  }
-  #overview .text {
-    font-size: 1.1rem;
-  }
-  #countdown .time-countdown .counter-column .count {
-    font-size: 2.5rem;
-  }
-  #invitation-details .col-lg-6 {
-    padding: 0 10px;
-  }
-  #invitation-details .row.text-center {
-    margin-top: 30px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-  }
-  #couple .couple-block {
-    padding: 20px;
-  }
-  #couple .couple-block .image-box .image {
-    height: 250px;
-  }
-  #couple .couple-block .image-box .icon-flowers-2 {
-    width: 60px;
-    height: 60px;
-    bottom: -15px;
-    right: -15px;
-  }
-  #couple .couple-block .content-box .name {
-    font-size: bold 1.777rem/1.5 "Questrial", sans-serif;
-  }
-  #story .timeline-wrapper::before {
-    left: 50%;
-  }
-  #story .event-block-two {
-    padding: 20px;
-    flex-direction: column;
-    text-align: center;
-  }
-  #story .event-block-two .date-column, #story .event-block-two .image-column {
-    margin-bottom: 15px;
-  }
-  #program .program-block {
-    padding: 20px;
-  }
-  #program .program-block .image-box .image {
-    height: 150px;
-  }
-  #program .program-block .image-box .icon {
-    font-size: 2rem;
-    bottom: -5px;
-  }
-  #program .program-block .image-box .icon-shape {
-    width: 60px;
-    height: 60px;
-    bottom: -15px;
-  }
-  #program .google-map iframe {
-    height: 300px;
-  }
-  #gallery .images-box figure.image img {
-    height: 180px;
-  }
-  #cta .content-box .title {
-    font-size: bold 1.777rem/1.5 "Questrial", sans-serif;
-  }
-  #cta .content-box .text {
-    font-size: 1rem;
-  }
-  #rsvp-form .form-column, #rsvp-form .video-column {
-    padding: 25px;
-  }
-  #rsvp-form .contact-form-one iframe {
-    height: 500px;
-  }
-  #rsvp-form .video-box img {
-    min-height: 250px;
-  }
-  #menu-food .food-menu {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-  #menu-food .menu-category h3 {
-    font-size: bold 1.333rem/1.6 "Questrial", sans-serif;
-  }
-  #menu-food .menu-category p {
-    font-size: 1rem;
-  }
-  #gifts .sec-title h2 {
-    font-size: 2rem;
-  }
-  #gifts .sec-title .gift-message {
-    font-size: 1rem;
-  }
-  #gifts .auto-container > .text-center {
-    padding: 25px 15px;
-  }
-  #gifts .auto-container > .text-center .account-detail {
-    font-size: 1rem;
-  }
-  #gifts .auto-container > .text-center .qr-code {
-    width: 200px;
-    height: 200px;
-  }
-}
-@media (max-width: 600px) {
-  #overview .name {
-    font-size: 2.5rem;
-  }
-  #overview .icon-heart {
-    width: 25px;
-    height: 25px;
-    margin: 0 5px;
-  }
-  #overview .text {
-    font-size: 1rem;
-  }
-  #countdown .time-countdown .counter-column .count {
-    font-size: 2rem;
-  }
-  #countdown .time-countdown .counter-column sub {
-    font-size: 0.8rem;
-  }
-  #invitation-details .invitation-main-img {
-    max-width: 300px;
-  }
-  #invitation-details .row.text-center {
-    flex-direction: column;
-  }
-  #invitation-details .row.text-center .col-4 {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  #invitation-details .invitator-name {
-    font-size: bold 1.333rem/1.6 "Questrial", sans-serif;
-  }
-  #invitation-details .closing-remark {
-    font-size: bold 1.333rem/1.6 "Questrial", sans-serif;
-  }
-  #couple .couple-block {
-    padding: 15px;
-  }
-  #couple .couple-block .image-box .image {
-    height: 200px;
-  }
-  #couple .couple-block .image-box .icon-border {
-    width: 40px;
-    height: 40px;
-    top: -10px;
-    left: -10px;
-  }
-  #couple .couple-block .image-box .icon-flowers-2 {
-    width: 50px;
-    height: 50px;
-    bottom: -10px;
-    right: -10px;
-  }
-  #couple .couple-block .content-box .name {
-    font-size: bold 1.333rem/1.6 "Questrial", sans-serif;
-  }
-  #story .timeline-wrapper::before {
-    left: 50%;
-  }
-  #story .event-block-two {
-    padding: 15px;
-  }
-  #story .event-block-two .date-column .date-box .date {
-    font-size: 1.5rem;
-  }
-  #story .event-block-two .date-column .date-box .date span {
-    font-size: 2rem;
-  }
-  #story .event-block-two .image-column {
-    width: 100%;
-    max-width: 200px;
-  }
-  #story .event-block-two .content-column .content-box h4.title {
-    font-size: bold 1.333rem/1.6 "Questrial", sans-serif;
-  }
-  #program .program-block {
-    padding: 15px;
-  }
-  #program .program-block .image-box .image {
-    height: 120px;
-  }
-  #program .program-block .image-box .icon {
-    font-size: 2rem;
-    bottom: -5px;
-  }
-  #program .program-block .image-box .icon-shape {
-    width: 60px;
-    height: 60px;
-    bottom: -15px;
-  }
-  #program .google-map iframe {
-    height: 250px;
-  }
-  #gallery .images-box {
-    grid-template-columns: 1fr;
-  }
-  #gallery .images-box figure.image img {
-    height: 150px;
-  }
-  #cta .content-box .title {
-    font-size: bold 1.333rem/1.6 "Questrial", sans-serif;
-  }
-  #cta .content-box .text {
-    font-size: 0.9rem;
-  }
-  #rsvp-form .form-column, #rsvp-form .video-column {
-    padding: 20px;
-  }
-  #rsvp-form .contact-form-one iframe {
-    height: 400px;
-  }
-  #rsvp-form .video-box img {
-    min-height: 200px;
-  }
-  #rsvp-form .video-box .play-btn {
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    font-size: 2rem;
-  }
-  #menu-food h2 {
-    font-size: 2.2rem;
-  }
-  #menu-food .sub-title.text-uppercase {
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
   #menu-food .menu-category {
-    margin-top: 2rem;
+    flex: 1 1 100%;
   }
-  #menu-food .menu-category h3 {
-    font-size: 1.1rem;
-  }
-  #menu-food .menu-category p {
-    font-size: 0.95rem;
-  }
-  #gifts .sec-title h2 {
-    font-size: 2rem;
-  }
-  #gifts .sec-title .gift-message {
-    font-size: 1rem;
-  }
-  #gifts .auto-container > .text-center {
-    padding: 25px 15px;
-  }
-  #gifts .auto-container > .text-center .account-detail {
-    font-size: 1rem;
-  }
-  #gifts .auto-container > .text-center .qr-code {
-    width: 200px;
-    height: 200px;
+  #menu-food .menu-content-wrapper {
+    padding: 30px;
+    border: none;
   }
 }
+
+/* --- 11. GIFTS / WISHES SECTION --- */
+#gifts {
+  background-color: hsl(0, 0%, 100%);
+}
+#gifts .sec-title {
+  margin-bottom: 20px;
+}
+#gifts .gift-message {
+  max-width: 600px;
+  margin: 0 auto 50px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-align: center;
+}
+#gifts .gift-card-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+#gifts .gift-card {
+  background-color: hsl(0, 0%, 95%);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  border-top: 5px solid hsl(342, 88%, 68%);
+  transition: all 0.4s ease-in-out;
+}
+#gifts .gift-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+#gifts .card-title {
+  font-family: "Charmonman", cursive;
+  color: hsl(0, 0%, 12%);
+  font-size: bold 2.369rem/1.4 "Questrial", sans-serif;
+  margin-bottom: 25px;
+}
+#gifts .qr-code {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  aspect-ratio: 1/1;
+  border-radius: 0.5rem;
+  border: 2px solid #eee;
+  margin-bottom: 25px;
+}
+#gifts .account-details p {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+#gifts .account-details p:last-child {
+  margin-bottom: 0;
+}
+#gifts .account-details strong {
+  color: hsl(0, 0%, 12%);
+}
+
 @keyframes bounce-y {
   0%, 100% {
     transform: translateY(0);
