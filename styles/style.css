@@ -24,38 +24,26 @@ body {
 
 h1 {
   font: bold 5.61rem/1.2 "Questrial", sans-serif;
-  color: hsl(0, 0%, 12%);
-  margin-bottom: 25px;
 }
 
 h2 {
   font: bold 4.209rem/1.2 "Questrial", sans-serif;
-  color: hsl(0, 0%, 12%);
-  margin-bottom: 25px;
 }
 
 h3 {
   font: bold 3.157rem/1.3 "Questrial", sans-serif;
-  color: hsl(0, 0%, 12%);
-  margin-bottom: 20px;
 }
 
 h4 {
   font: bold 2.369rem/1.4 "Questrial", sans-serif;
-  color: hsl(0, 0%, 12%);
-  margin-bottom: 15px;
 }
 
 h5 {
   font: bold 1.777rem/1.5 "Questrial", sans-serif;
-  color: hsl(0, 0%, 12%);
-  margin-bottom: 15px;
 }
 
 h6 {
   font: bold 1.333rem/1.6 "Questrial", sans-serif;
-  color: hsl(0, 0%, 12%);
-  margin-bottom: 10px;
 }
 
 p {
@@ -74,6 +62,7 @@ p {
   padding: 1rem 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #eee;
+  /* --- RESPONSIVE STYLES FOR MOBILE NAVIGATION --- */
 }
 #navbar .container {
   display: flex;
@@ -94,18 +83,43 @@ p {
   color: hsl(342, 88%, 68%);
   transform: translateY(-2px);
 }
-#navbar ul {
+#navbar .mobile-nav-toggle {
+  display: none;
+  position: relative;
+  z-index: 9999;
+  background: transparent;
+  border: 0;
+  width: 2rem;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+#navbar .mobile-nav-toggle::before, #navbar .mobile-nav-toggle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: hsl(0, 0%, 12%);
+  transition: transform 0.3s ease-in-out;
+}
+#navbar .mobile-nav-toggle::before {
+  top: 25%;
+}
+#navbar .mobile-nav-toggle::after {
+  bottom: 25%;
+}
+#navbar .primary-navigation {
   display: flex;
   gap: 2rem;
 }
-#navbar ul li a {
+#navbar .primary-navigation li a {
   position: relative;
   color: hsl(0, 0%, 12%);
   font-weight: 500;
   padding: 5px 0;
   transition: all 0.3s ease-in-out;
 }
-#navbar ul li a::before {
+#navbar .primary-navigation li a::before {
   content: "";
   position: absolute;
   width: 0;
@@ -115,11 +129,52 @@ p {
   background: linear-gradient(to right, hsl(342, 88%, 68%), hsl(0, 100%, 89%));
   transition: all 0.3s ease-in-out;
 }
-#navbar ul li a:hover {
+#navbar .primary-navigation li a:hover {
   color: hsl(342, 88%, 68%);
 }
-#navbar ul li a:hover::before {
+#navbar .primary-navigation li a:hover::before {
   width: 100%;
+}
+#navbar.nav-open .mobile-nav-toggle::before {
+  transform: translateY(250%) rotate(45deg);
+}
+#navbar.nav-open .mobile-nav-toggle::after {
+  transform: translateY(-250%) rotate(-45deg);
+}
+#navbar.nav-open .primary-navigation {
+  transform: translateX(0);
+}
+@media (max-width: 992px) {
+  #navbar .mobile-nav-toggle {
+    display: block;
+  }
+  #navbar .primary-navigation {
+    position: fixed;
+    transform: translateX(100%);
+    inset: 0 0 0 30%;
+    flex-direction: column;
+    padding: min(20vh, 10rem) 2em;
+    gap: 2em;
+    background: hsla(0, 0%, 100%, 0.9);
+    -webkit-backdrop-filter: blur(1rem);
+            backdrop-filter: blur(1rem);
+    transition: transform 0.3s ease-in-out;
+  }
+  #navbar .primary-navigation li a:hover::before {
+    width: 0;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* --- FOOTER --- */
@@ -173,14 +228,13 @@ footer .copyright {
   border: 2px solid #eee;
 }
 
-/* --- RESPONSIVE ADJUSTMENTS (Main/Nav/Footer) --- */
+/*
+    --- THE OLD RESPONSIVE BLOCK HAS BEEN DELETED ---
+    The global responsive heading styles are still useful, but the
+    component-specific ones (like #navbar) were causing conflicts.
+    It's better to keep those styles with their components.
+*/
 @media (max-width: 1280px) {
-  #navbar .logo {
-    font-size: 1.3rem;
-  }
-  #navbar ul {
-    gap: 1.5rem;
-  }
   h1 {
     font-size: 4.5rem;
   }
@@ -201,15 +255,6 @@ footer .copyright {
   }
 }
 @media (max-width: 992px) {
-  #navbar {
-    padding: 0.8rem 0;
-  }
-  #navbar .logo {
-    font-size: 1.2rem;
-  }
-  #navbar ul {
-    gap: 1rem;
-  }
   h1 {
     font-size: 3.8rem;
   }
@@ -230,18 +275,6 @@ footer .copyright {
   }
 }
 @media (max-width: 768px) {
-  #navbar .container {
-    flex-direction: column;
-    gap: 10px;
-  }
-  #navbar ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem;
-  }
-  #navbar ul li a {
-    font-size: 0.9em;
-  }
   h1 {
     font-size: 3rem;
   }
@@ -262,19 +295,6 @@ footer .copyright {
   }
 }
 @media (max-width: 600px) {
-  #navbar {
-    padding: 0.5rem 0;
-  }
-  #navbar .logo {
-    font-size: 1rem;
-  }
-  #navbar ul {
-    gap: 0.5rem;
-  }
-  #navbar ul li a {
-    font-size: 0.8em;
-    padding: 3px 5px;
-  }
   h1 {
     font-size: 2.5rem;
   }
@@ -1073,56 +1093,131 @@ section .icon-divider {
 
 /* --- 7. GALLERY SECTION --- */
 #gallery {
-  background: url("img/decorations/gallery-background.jpg") center center no-repeat;
+  background: hsl(0, 0%, 100%);
+  padding: 60px 0;
+  /* --- RESPONSIVE STYLES for the Collage --- */
+}
+#gallery .auto-container {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  aspect-ratio: 3/2;
+}
+#gallery .gallery-title-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45%;
+  height: 40%;
+  background-color: #3a3d4c;
+  background-image: url("../img/decorations/pink-rose-petals.jpg");
   background-size: cover;
-  background-attachment: fixed;
-  background-blend-mode: multiply;
-  background-color: rgba(51, 51, 51, 0.7);
-  color: hsl(0, 0%, 98%);
-  /* Responsive styles for Gallery */
-}
-#gallery .sec-title {
-  margin-bottom: 80px;
-}
-#gallery .images-box {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1170px;
-  margin: 0 auto;
-}
-#gallery .images-box figure.image {
-  overflow: hidden;
   border-radius: 1.5rem;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#gallery .gallery-title-box .sub-title, #gallery .gallery-title-box h2 {
+  color: hsl(0, 0%, 12%);
+}
+#gallery .gallery-title-box h2 {
+  font-size: 3rem;
+}
+#gallery figure.image {
+  position: absolute;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  overflow: hidden;
   transition: all 0.4s ease-in-out;
-  cursor: pointer;
 }
-#gallery .images-box figure.image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+#gallery figure.image:hover {
+  transform: scale(1.05) rotate(1deg);
+  z-index: 10;
 }
-#gallery .images-box figure.image img {
+#gallery figure.image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  display: block;
 }
-#gallery .images-box figure.image.image-1 {
-  grid-column: span 2;
-  grid-row: span 2;
+#gallery .g-img-1 {
+  top: 10%;
+  left: 8%;
+  width: 20%;
+  aspect-ratio: 3/4;
+  z-index: 2;
 }
-#gallery .images-box figure.image.image-5 {
-  grid-column: span 2;
+#gallery .g-img-2 {
+  top: 45%;
+  left: 5%;
+  width: 25%;
+  aspect-ratio: 4/3;
+  z-index: 6;
+}
+#gallery .g-img-3 {
+  top: 15%;
+  left: 30%;
+  width: 28%;
+  aspect-ratio: 4/3;
+  z-index: 1;
+}
+#gallery .g-img-4 {
+  top: 55%;
+  left: 35%;
+  width: 25%;
+  aspect-ratio: 3/4;
+  z-index: 6;
+}
+#gallery .g-img-5 {
+  top: 18%;
+  left: 60%;
+  width: 25%;
+  aspect-ratio: 3/2;
+  z-index: 2;
+}
+#gallery .g-img-6 {
+  top: 40%;
+  left: 68%;
+  width: 25%;
+  aspect-ratio: 4/3;
+  z-index: 1;
+}
+#gallery .g-img-7 {
+  top: 60%;
+  left: 65%;
+  width: 22%;
+  aspect-ratio: 3/4;
+  z-index: 6;
 }
 @media (max-width: 992px) {
-  #gallery .images-box {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  #gallery .auto-container {
+    position: static;
+    aspect-ratio: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
-  #gallery .images-box figure.image, #gallery .images-box figure.image.image-1, #gallery .images-box figure.image.image-5 {
-    grid-column: span 1;
-    grid-row: span 1;
+  #gallery .gallery-title-box, #gallery figure.image {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+  }
+  #gallery figure.image {
+    aspect-ratio: 1/1;
+  }
+  #gallery .gallery-title-box {
+    grid-column: 1/-1;
+    padding: 40px 20px;
+    height: 200px;
+  }
+}
+@media (max-width: 600px) {
+  #gallery .auto-container {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1175,19 +1270,16 @@ section .icon-divider {
 /* --- 9. RSVP FORM SECTION --- */
 #rsvp-form {
   background-color: hsl(0, 0%, 95%);
-  padding: 60px 8%;
+  padding: 60px 0;
+  /* --- Responsive Adjustments for Form --- */
 }
-#rsvp-form .rsvp-grid {
-  display: flex;
-  align-items: stretch;
-  gap: 40px;
-}
-#rsvp-form .rsvp-column-video {
-  flex: 2;
-}
-#rsvp-form .rsvp-column-form {
-  flex: 3;
+#rsvp-form .auto-container {
+  max-width: 800px;
   position: relative;
+}
+#rsvp-form .form-wrapper {
+  position: relative;
+  z-index: 1;
 }
 #rsvp-form .icon-leave {
   content: "";
@@ -1199,87 +1291,28 @@ section .icon-divider {
   position: absolute;
   animation: bounce-x 8s linear infinite;
   position: absolute;
-  top: -30px;
-  right: -15px;
+  top: -40px;
+  right: -30px;
   opacity: 0.5;
   z-index: 0;
 }
-#rsvp-form .video-box {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 3rem;
-  overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  aspect-ratio: 9/16;
-}
-#rsvp-form .video-box .video-poster img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#rsvp-form .video-box .play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  line-height: 80px;
-  border-radius: 50%;
-  font-size: 2.5rem;
-  text-align: center;
-  background-color: rgba(245.208, 101.592, 144.6768, 0.8);
-  color: hsl(0, 0%, 100%);
-  transition: all 0.3s ease-in-out;
-}
-#rsvp-form .video-box .play-btn:hover {
-  background-color: #c0893b;
-  transform: translate(-50%, -50%) scale(1.1);
-}
-#rsvp-form .video-box .icon-leaves-27 {
-  content: "";
-  display: block;
-  background: url("img/decorations/leaves-rotate.svg") no-repeat center center;
-  background-size: contain;
-  width: 120px;
-  height: 120px;
-  position: absolute;
-  animation: rotate-x 15s linear infinite;
-  position: absolute;
-  bottom: -30px;
-  right: -30px;
-  opacity: 0.6;
-}
-#rsvp-form .form-wrapper {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-#rsvp-form .form-wrapper .form-title {
+#rsvp-form .form-title {
   font-family: "Charmonman", cursive;
   font-size: bold 2.369rem/1.4 "Questrial", sans-serif;
   color: hsl(342, 88%, 68%);
   margin-bottom: 20px;
-  flex-shrink: 0;
+  text-align: center;
 }
-#rsvp-form .form-wrapper .google-form {
+#rsvp-form .google-form {
   width: 100%;
-  flex-grow: 1;
+  height: 750px;
   border: 1px solid #eee;
   border-radius: 1.5rem;
-  min-height: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-@media (max-width: 992px) {
-  #rsvp-form .rsvp-grid {
-    flex-direction: column;
-  }
-  #rsvp-form .rsvp-column-video {
-    margin-bottom: 40px;
+@media (max-width: 768px) {
+  #rsvp-form .google-form {
+    height: 650px;
   }
 }
 

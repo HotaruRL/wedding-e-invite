@@ -22,22 +22,28 @@
 
     <!-- Navigation Bar -->
     <nav id="navbar">
-        <div class="container">
-            <a class="logo" href="#overview">Diệu 💞 Trí</a>
-            <ul>
-                <li><a href="#overview">Trang Chủ</a></li>
-                <li><a href="#couple">Cô Dâu & Chú Rể</a></li>
-                <li><a href="#story">Chuyện Chúng Mình</a></li>
-                <li><a href="#gallery">Thư Viện Ảnh</a></li>
-                <li><a href="#program">Chương Trình Tiệc</a></li>
-                <li><a href="#rsvp-form">RSVP</a></li>
-                <li><a href="#menu-food">Thực Đơn</a></li>
-                <li><a href="#gifts">Mừng Cưới</a></li>
-            </ul>
-            <!-- You might want to add a mobile menu icon here -->
-            <!-- <button class="mobile-menu-toggle">☰</button> -->
-        </div>
-    </nav>
+    <div class="container">
+        <a class="logo" href="#overview">Diệu 💞 Trí</a>
+
+        <!-- 1. The Mobile Menu Button (Hamburger Icon) -->
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+            <span class="sr-only">Menu</span>
+        </button>
+
+        <!-- 2. The Navigation List -->
+        <!-- I've added an ID to make it easy to target -->
+        <ul id="primary-navigation" class="primary-navigation">
+            <li><a href="#overview">Trang Chủ</a></li>
+            <li><a href="#couple">Cô Dâu & Chú Rể</a></li>
+            <li><a href="#story">Chuyện Chúng Mình</a></li>
+            <li><a href="#gallery">Thư Viện Ảnh</a></li>
+            <li><a href="#program">Chương Trình Tiệc</a></li>
+            <li><a href="#rsvp-form">RSVP</a></li>
+            <li><a href="#menu-food">Thực Đơn</a></li>
+            <li><a href="#gifts">Mừng Cưới</a></li>
+        </ul>
+    </div>
+</nav>
 
     <main>
         <!-- Section 1: Banner/Overview -->
@@ -275,41 +281,43 @@
             </div>
         </section>
 
-        <!-- Section 7: Photo Gallery (No change needed here) -->
-        <section id="gallery" class="gallery-section">
-            <div class="auto-container">
-                <div class="outer-box">
-                    <div class="bg-pattern-2"></div>
-                    <div class="sec-title light text-center" data-aos="fade-up">
-                        <span class="sub-title">Hình</span>
-                        <h2>Kỉ niệm cưới</h2>
-                    </div>
-                    <div class="images-box">
-                        <figure class="image image-1" data-aos="zoom-in" data-aos-delay="100">
-                            <a href="img/gallery/full-1.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
-                        </figure>
-                        <figure class="image image-2" data-aos="zoom-in" data-aos-delay="200">
-                            <a href="img/gallery/full-2.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
-                        </figure>
-                        <figure class="image image-3" data-aos="zoom-in" data-aos-delay="300">
-                            <a href="img/gallery/full-3.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
-                        </figure>
-                        <figure class="image image-4" data-aos="zoom-in" data-aos-delay="400">
-                            <a href="img/gallery/full-4.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
-                        </figure>
-                        <figure class="image image-5" data-aos="zoom-in" data-aos-delay="500">
-                            <a href="img/gallery/full-5.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
-                        </figure>
-                        <figure class="image image-6" data-aos="zoom-in" data-aos-delay="600">
-                            <a href="img/gallery/full-6.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
-                        </figure>
-                        <figure class="image image-7" data-aos="zoom-in" data-aos-delay="700">
-                            <a href="img/gallery/full-7.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
-                        </figure>
-                    </div>
-                </div>
+        <!-- Section 7: Photo Gallery -->
+        <section id="gallery">
+    <div class="auto-container">
+        <div class="images-box">
+            <!-- The central title element -->
+            <div class="gallery-title-box">
+                <span>Hình</span>
+                <h2>Kỉ Niệm Cưới</h2>
             </div>
-        </section>
+
+            <!-- Photos 1-5 (Assuming these paths are correct) -->
+            <figure class="image g-img-1" data-aos="fade-up" data-aos-delay="100">
+                <a href="img/decorations/couple-hands-wedding-ring.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
+            </figure>
+            <figure class="image g-img-2" data-aos="fade-up" data-aos-delay="200">
+                <a href="img/decorations/couple-hands-wedding-ring.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
+            </figure>
+            <figure class="image g-img-3" data-aos="fade-up" data-aos-delay="300">
+                <a href="img/decorations/couple-hands-wedding-ring.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
+            </figure>
+            <figure class="image g-img-4" data-aos="fade-up" data-aos-delay="400">
+                <a href="img/decorations/couple-hands-wedding-ring.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
+            </figure>
+            <figure class="image g-img-5" data-aos="fade-up" data-aos-delay="500">
+                <a href="img/decorations/couple-hands-wedding-ring.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
+            </figure>
+            <figure class="image g-img-6" data-aos="fade-up" data-aos-delay="600">
+                <!-- Add the correct file extension, e.g., .jpg -->
+                <a href="img/decorations/couple-hands-wedding-ring.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
+            </figure>
+            <figure class="image g-img-7" data-aos="fade-up" data-aos-delay="700">
+                <!-- Add the correct file extension, e.g., .jpg -->
+                <a href="img/decorations/couple-hands-wedding-ring.jpg" data-fancybox="gallery"><img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Wedding Photo"></a>
+            </figure>
+        </div>
+    </div>
+</section>
 
         <!-- Section 6: Wedding Program/Ceremony Details (Rewritten) -->
         <section id="program">
@@ -407,29 +415,14 @@
             </div>
         </section>
 
-        <!-- Section 9: RSVP Form (Place this OUTSIDE any .auto-container) -->
+        <!-- Section 9: RSVP Form -->
         <section id="rsvp-form">
-            <div class="rsvp-grid">
-                <!-- Left Column: Video -->
-                <div class="rsvp-column rsvp-column-video" data-aos="fade-right">
-                    <div class="video-box">
-                        <figure class="video-poster">
-                            <img src="img/decorations/contact-video-poster.jpg" alt="Video poster">
-                        </figure>
-                        <a href="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID" class="play-btn" data-fancybox="">
-                            <i class="icon fa fa-play"></i>
-                        </a>
-                        <div class="icon-leaves-27 rotate-x"></div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Form -->
-                <div class="rsvp-column rsvp-column-form" data-aos="fade-left" data-aos-delay="300">
+            <div class="auto-container">
+                <!-- The form-wrapper is now the main element -->
+                <div class="form-wrapper" data-aos="fade-up">
                     <div class="icon-leave bounce-x"></div>
-                    <div class="form-wrapper">
-                        <h6 class="form-title">Bạn sẽ đến chứ?</h6>
-                        <iframe class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSe994qwiwsE1zqoK9xFsVpZt3p2IsZTZAPs8JEXyC0JAQFzYQ/viewform?embedded=true" frameborder="0">Loading…</iframe>
-                    </div>
+                    <h6 class="form-title">Bạn sẽ đến chứ?</h6>
+                    <iframe class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSe994qwiwsE1zqoK9xFsVpZt3p2IsZTZAPs8JEXyC0JAQFzYQ/viewform?embedded=true" frameborder="0">Loading…</iframe>
                 </div>
             </div>
         </section>
@@ -579,6 +572,29 @@
                 });
             });
         });
+
+        // --- NEW Mobile Navigation Script ---
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const primaryNav = document.querySelector('#primary-navigation');
+        const navBar = document.querySelector('#navbar');
+
+        navToggle.addEventListener('click', () => {
+            // Toggle the 'nav-open' class on the entire navbar
+            navBar.classList.toggle('nav-open');
+            
+            // Update aria-expanded for accessibility
+            const isExpanded = navBar.classList.contains('nav-open');
+            navToggle.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Optional: Close menu when a link is clicked
+        document.querySelectorAll('#primary-navigation a').forEach(link => {
+            link.addEventListener('click', () => {
+                navBar.classList.remove('nav-open');
+                navToggle.setAttribute('aria-expanded', false);
+            });
+        });
+
     </script>
 </body>
 </html>
