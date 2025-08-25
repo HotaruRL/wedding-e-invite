@@ -1334,7 +1334,8 @@ section .icon-divider {
 
 /* --- 11. GIFTS / WISHES SECTION --- */
 #gifts {
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 95%);
+  padding-top: 0;
 }
 #gifts .sec-title {
   margin-bottom: 20px;
@@ -1356,12 +1357,13 @@ section .icon-divider {
   background-color: hsl(0, 0%, 95%);
   border-radius: 1.5rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  padding: 40px;
+  padding: 60px;
   text-align: center;
-  width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   border-top: 5px solid hsl(342, 88%, 68%);
   transition: all 0.4s ease-in-out;
+  flex: 1;
+  min-width: 320px;
 }
 #gifts .gift-card:hover {
   transform: translateY(-5px);

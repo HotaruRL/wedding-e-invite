@@ -686,7 +686,10 @@ section {
 
 /* --- 11. GIFTS / WISHES SECTION --- */
 #gifts {
-    background-color: $color-text-white;
+    background-color: $color-light-bg-subtle;
+    // 3. REDUCE TOP PADDING to close the gap with the menu section above
+    padding-top: 0; 
+
     .sec-title { margin-bottom: 20px; }
     .gift-message {
         max-width: 600px;
@@ -699,18 +702,25 @@ section {
         display: flex;
         justify-content: center;
         gap: 40px;
-        flex-wrap: wrap;
+        flex-wrap: wrap; // Allows cards to stack on mobile
     }
     .gift-card {
         background-color: $color-light-bg-subtle;
         border-radius: $border-radius-medium;
         box-shadow: $shadow-medium;
-        padding: 40px;
+        padding: 60px;
         text-align: center;
-        width: 100%;
-        max-width: 400px;
+        max-width: 600px;
         border-top: 5px solid $color-primary-red;
         transition: $transition-medium;
+
+        // 1. THIS IS THE KEY CHANGE for the side-by-side layout
+        // Instead of a fixed width, flex allows the items to share space.
+        flex: 1;
+
+        // 2. Add a min-width to ensure the cards don't get too narrow before stacking
+        min-width: 320px;
+
         &:hover {
             transform: translateY(-5px);
             box-shadow: $shadow-hover;
