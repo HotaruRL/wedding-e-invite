@@ -20,7 +20,7 @@ section {
         margin-bottom: 50px;
         .sub-title {
             font-family: $font-family-dancing; // Script font for sub-titles
-            font-size: 2.2rem;
+            font-size: 3rem;
             color: $color-bronze;
             display: block;
             margin-bottom: 10px;
@@ -35,7 +35,7 @@ section {
         }
     }
     .icon-divider { // Generic floral divider
-        @include icon-style('../img/decorations/red-divider-001.png', 200px, 200px);
+        @include icon-style('../img/decorations/red-divider-001.png', 300px, 100px);
         position: relative;
         margin: 0 auto 5px;
     }
@@ -182,13 +182,11 @@ section {
     }
 }
 
-/* --- 2. COUNTDOWN SECTION (REVISED) --- */
+/* --- 2. COUNTDOWN SECTION --- */
 #countdown {
-    padding-top: $padding-y-section-lg;
-    padding-bottom: $padding-y-section-lg;
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-color: $color-light-bg-subtle;
-
-    // Image box styles are now removed from here
 
     .caption-box {
         .sec-title {
@@ -202,12 +200,12 @@ section {
             }
         }
         .icon-divider {
-             margin: 10px auto;
+             margin: 1px auto; 
         }
     }
 
     .time-counter {
-        margin-top: 25px;
+        margin-top: 0px; 
         .time-countdown {
             display: flex;
             justify-content: center;
@@ -226,7 +224,7 @@ section {
                 }
                 sub {
                     font-family: $font-family-questrial;
-                    font-size: 1rem;
+                    font-size: 1.6rem;
                     color: $color-text-dark;
                     margin-top: 10px;
                 }

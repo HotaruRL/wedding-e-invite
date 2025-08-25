@@ -312,7 +312,7 @@ section .sec-title {
 }
 section .sec-title .sub-title {
   font-family: "Charmonman", cursive;
-  font-size: 2.2rem;
+  font-size: 3rem;
   color: #c0893b;
   display: block;
   margin-bottom: 10px;
@@ -330,8 +330,8 @@ section .icon-divider {
   display: block;
   background: url("../img/decorations/red-divider-001.png") no-repeat center center;
   background-size: contain;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 100px;
   position: absolute;
   animation: none;
   position: relative;
@@ -474,10 +474,10 @@ section .icon-divider {
     height: 270px;
   }
 }
-/* --- 2. COUNTDOWN SECTION (REVISED) --- */
+/* --- 2. COUNTDOWN SECTION --- */
 #countdown {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   background-color: hsl(0, 0%, 95%);
 }
 #countdown .caption-box .sec-title {
@@ -491,10 +491,10 @@ section .icon-divider {
   margin-bottom: 0;
 }
 #countdown .caption-box .icon-divider {
-  margin: 10px auto;
+  margin: 1px auto;
 }
 #countdown .time-counter {
-  margin-top: 25px;
+  margin-top: 0px;
 }
 #countdown .time-counter .time-countdown {
   display: flex;
@@ -515,7 +515,7 @@ section .icon-divider {
 }
 #countdown .time-counter .time-countdown .counter-column sub {
   font-family: "Questrial", sans-serif;
-  font-size: 1rem;
+  font-size: 1.6rem;
   color: hsl(0, 0%, 12%);
   margin-top: 10px;
 }
