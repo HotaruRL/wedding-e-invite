@@ -520,6 +520,37 @@ section .icon-divider {
   margin-top: 10px;
 }
 
+/* --- RESPONSIVE ADJUSTMENTS for Countdown Section --- */
+@media (max-width: 768px) {
+  #countdown .time-countdown {
+    gap: 20px;
+  }
+  #countdown .time-countdown .counter-column .count {
+    font-size: 3rem;
+  }
+  #countdown .time-countdown .counter-column sub {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 600px) {
+  #countdown {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  #countdown .caption-box .sec-title .text.sub-title {
+    font-size: 1.8rem;
+  }
+  #countdown .time-countdown {
+    gap: 15px;
+  }
+  #countdown .time-countdown .counter-column .count {
+    font-size: 2.2rem;
+  }
+  #countdown .time-countdown .counter-column sub {
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+}
 /* --- 3. INVITATION DETAILS SECTION --- */
 #invitation-details .container-fluid {
   max-width: 1170px;
