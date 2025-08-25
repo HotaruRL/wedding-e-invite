@@ -917,23 +917,41 @@ section .icon-divider {
   text-align: right;
 }
 
-/* --- 6. WEDDING PROGRAM SECTION (REVISED) --- */
+/* --- 6. WEDDING PROGRAM SECTION (Revised with Hover Effect) --- */
+#program {
+  /* --- Responsive Stacking --- */
+}
 #program .sec-title {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
+}
+#program .program-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 #program .program-block {
-  margin-bottom: 40px;
+  flex: 1;
+  max-width: 350px;
+  border: 2px solid hsl(342, 88%, 68%);
+  background-color: hsl(0, 0%, 95%);
   padding: 30px;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
 }
 #program .program-block .image-box {
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
 #program .program-block .image-box .image {
-  height: 200px;
-  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1/1;
+  height: auto;
+  border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #c0893b;
+  margin: 0 auto;
+  border: 5px solid #c0893b;
 }
 #program .program-block .image-box .image img {
   width: 100%;
@@ -943,28 +961,34 @@ section .icon-divider {
 }
 #program .program-block .image-box .icon-shape {
   position: absolute;
-  bottom: -20px;
+  bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
-  width: 70px;
-  height: 70px;
-  background-color: hsl(342, 88%, 68%);
+  width: 80px;
+  height: 80px;
+  background-color: hsl(0, 0%, 100%);
   border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1;
+  transition: all 0.4s ease-in-out;
 }
 #program .program-block .image-box .icon {
   position: absolute;
-  bottom: -10px;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 2.5rem;
-  color: hsl(0, 0%, 100%);
+  color: hsl(342, 88%, 68%);
   z-index: 2;
+  transition: all 0.4s ease-in-out;
+}
+#program .program-block .content-box .title, #program .program-block .content-box .date, #program .program-block .content-box .time, #program .program-block .content-box .address {
+  transition: all 0.4s ease-in-out;
 }
 #program .program-block .content-box .title {
   font-family: "Charmonman", cursive;
   font-size: bold 2.369rem/1.4 "Questrial", sans-serif;
-  color: hsl(342, 88%, 68%);
+  color: hsl(0, 0%, 12%);
   margin-bottom: 10px;
 }
 #program .program-block .content-box .date, #program .program-block .content-box .time {
@@ -988,28 +1012,37 @@ section .icon-divider {
 #program .program-block .content-box .address {
   font-family: "Questrial", sans-serif;
   font-size: 1.1rem;
-  color: #c0893b;
+  color: hsl(0, 0%, 12%);
   font-weight: 500;
 }
-#program .google-map-wrapper {
-  padding: 60px 0;
-  background-color: hsl(0, 0%, 95%);
-  margin-top: 50px;
+#program .program-block:hover {
+  background-color: hsl(0, 0%, 12%);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
-#program .google-map-wrapper .map-title {
-  font-family: "Questrial", sans-serif;
-  font-size: bold 3.157rem/1.3 "Questrial", sans-serif;
-  color: hsl(0, 0%, 12%);
-  margin-bottom: 40px;
+#program .program-block:hover .content-box .title, #program .program-block:hover .content-box .date, #program .program-block:hover .content-box .time, #program .program-block:hover .content-box .address {
+  color: hsl(0, 0%, 98%);
 }
-#program .google-map-wrapper .google-map {
+#program .program-block:hover .image-box .icon-shape {
+  background-color: hsl(342, 88%, 68%);
+}
+#program .program-block:hover .image-box .icon {
+  color: hsl(0, 0%, 100%);
+}
+@media (max-width: 992px) {
+  #program .program-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#program .google-map {
   max-width: 1170px;
   margin: 0 auto;
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
-#program .google-map-wrapper .google-map iframe {
+#program .google-map iframe {
   width: 100%;
   height: 500px;
   border: none;

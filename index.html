@@ -311,15 +311,19 @@
             </div>
         </section>
 
-        <!-- Section 6: Wedding Program/Ceremony Details (Revised) -->
-        <section id="program" class="program-section">
+        <!-- Section 6: Wedding Program/Ceremony Details (Rewritten) -->
+        <section id="program">
             <div class="auto-container">
                 <div class="sec-title text-center">
                     <span class="sub-title">Chương trình</span>
                     <h2>Tiệc cưới</h2>
                 </div>
-                <div class="row">
-                    <div class="program-block col-lg-4 col-md-12 col-sm-12" data-aos="fade-up">
+
+                <!-- New Flexbox Grid Container -->
+                <div class="program-grid">
+
+                    <!-- Card 1: Đón khách -->
+                    <div class="program-block" data-aos="fade-up">
                         <div class="image-box">
                             <figure class="image">
                                 <img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Đón khách & chụp hình">
@@ -336,7 +340,8 @@
                         </div>
                     </div>
 
-                    <div class="program-block col-lg-4 col-md-12 col-sm-12" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Card 2: Làm lễ -->
+                    <div class="program-block" data-aos="fade-up" data-aos-delay="300">
                         <div class="image-box">
                             <figure class="image">
                                 <img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Làm lễ">
@@ -353,7 +358,8 @@
                         </div>
                     </div>
 
-                    <div class="program-block col-lg-4 col-md-12 col-sm-12" data-aos="fade-up" data-aos-delay="600">
+                    <!-- Card 3: Nhập tiệc (with dark-card class) -->
+                    <div class="program-block dark-card" data-aos="fade-up" data-aos-delay="600">
                         <div class="image-box">
                             <figure class="image">
                                 <img src="img/decorations/couple-hands-wedding-ring.jpg" alt="Nhập tiệc">
@@ -369,6 +375,7 @@
                             <div class="address">Tại [Tên Địa Điểm]: [Địa Chỉ]</div>
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="google-map-wrapper" data-aos="fade-up">
