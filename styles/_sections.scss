@@ -232,6 +232,50 @@ section {
         }
     }
 }
+/* --- RESPONSIVE ADJUSTMENTS for Countdown Section --- */
+
+@media (max-width: $breakpoint-tablet) {
+    #countdown {
+        .time-countdown {
+            gap: 20px; // Reduce space between numbers
+
+            .counter-column {
+                .count {
+                    font-size: 3rem; // Scale down number size
+                }
+                sub {
+                    font-size: 1.2rem; // Scale down label size
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-phone) {
+    #countdown {
+        // Optional: reduce padding on the smallest screens
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .caption-box .sec-title .text.sub-title {
+            font-size: 1.8rem; // Make title smaller too
+        }
+
+        .time-countdown {
+            gap: 15px; // Further reduce space
+
+            .counter-column {
+                .count {
+                    font-size: 2.2rem; // Final number size for phones
+                }
+                sub {
+                    font-size: 1rem; // Final label size
+                    margin-top: 5px; // Bring label closer to number
+                }
+            }
+        }
+    }
+}
 
 /* --- 3. INVITATION DETAILS SECTION --- */
 #invitation-details {
