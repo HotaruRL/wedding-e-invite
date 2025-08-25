@@ -44,7 +44,7 @@ section {
 /* --- 1. BANNER SECTION (OVERVIEW) --- */
 #overview {
     min-height: 100vh;
-    padding-top: 200px;
+    padding-top: 150px; // Adjusted padding for more space
     padding-bottom: 100px;
     background: url('../img/decorations/pink-rose-petals.jpg') center center no-repeat;
     background-size: cover;
@@ -52,6 +52,8 @@ section {
     background-blend-mode: multiply;
     background-color: rgba($color-text-dark, 0.5);
     color: $color-text-light;
+    display: flex; // Use flex to help center content vertically
+    align-items: center;
 
     .bg-pattern-1 {
         position: absolute;
@@ -65,7 +67,8 @@ section {
     }
 
     .auto-container { z-index: 2; }
-    .content-box { position: relative; padding: 50px 0; }
+    .content-box { position: relative; padding: 30px 0; }
+    
     .date {
         font-size: 1.6rem;
         font-family: $font-family-questrial;
@@ -73,33 +76,109 @@ section {
         margin-bottom: 30px;
         letter-spacing: 2px;
     }
+
     .name {
-        font-size: 6rem;
+        font-size: 5.5rem; // Slightly adjusted for better fit
         font-weight: 700;
         color: $color-text-white;
         margin-bottom: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: row; // Default direction for large screens
         line-height: 1;
 
         .bride-name, .groom-name {
             font-family: $font-family-dancing;
+            padding: 0 20px;
+            white-space: nowrap;
         }
 
-        .icon-heart {
-            @include icon-style('../img/decorations/love-icon-love-heart-vector.svg', 200px, 200px); // Adjust size with variable
+        // Styles for the large, central image
+        .image-box {
             position: relative;
-            display: inline-block;
-            margin: 0 20px;
-            vertical-align: middle;
+            margin: 0 40px; // Generous horizontal spacing
+            width: 500px;   // The large size you wanted
+            height: 500px;
+            flex-shrink: 0; // Crucial: prevents the image from shrinking
+
+            .image {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                overflow: hidden;
+                border: 3px solid rgba($color-text-white, 0.8);
+                img { width: 100%; height: 100%; object-fit: cover; }
+            }
+
+            .icon-box {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-49%, -51%);
+                width: 700px;  // Frame is larger than the image
+                height: 700px;
+
+                .icon-flowers-1 {
+                    @include icon-style('../img/decorations/watercolor-flowers-circular-frame.svg', 100%, 100%);
+                }
+            }
         }
     }
+
     .text {
         font-family: $font-family-questrial;
         font-size: 1.8rem;
         color: $color-text-light;
         font-weight: 300;
+        margin-top: 50px;
+    }
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS for the Banner --- */
+
+// On Laptops and smaller -> Stack the names and image
+@media (max-width: $breakpoint-desktop-lg) {
+    #overview .name {
+        flex-direction: column; // This is the key: stacks the items vertically
+        font-size: 4rem; // Reduce font size for the new layout
+
+        .image-box {
+            margin: 30px 0; // Switch to vertical margin
+        }
+    }
+}
+
+// On Tablets -> Scale down the image and fonts
+@media (max-width: $breakpoint-tablet) {
+    #overview .name {
+        font-size: 3rem;
+
+        .image-box {
+            width: 300px;
+            height: 300px;
+            .icon-box {
+                width: 360px;
+                height: 360px;
+            }
+        }
+    }
+}
+
+// On Phones -> Final scaling for the smallest screens
+@media (max-width: $breakpoint-phone) {
+    #overview .name {
+        font-size: 2.5rem;
+
+        .image-box {
+            width: 220px;
+            height: 220px;
+            .icon-box {
+                width: 270px;
+                height: 270px;
+            }
+        }
     }
 }
 
@@ -109,25 +188,8 @@ section {
     padding-bottom: $padding-y-section-lg;
     background-color: $color-light-bg-subtle;
 
-    .image-box {
-        position: relative;
-        margin: 0 auto 20px; // Center the image box
-        width: 150px; // Explicit width
-        .image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid $color-primary-red;
-            img { width: 100%; height: 100%; object-fit: cover; }
-        }
-        .icon-box {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            .icon-flowers-1 { @include icon-style('../img/decorations/flower-icon-1.svg', 70px, 70px); }
-        }
-    }
+    // Image box styles are now removed from here
+
     .caption-box {
         .sec-title {
             margin-bottom: 0;
@@ -136,16 +198,16 @@ section {
                 font-size: 2.2rem;
                 color: $color-bronze;
                 display: block;
-                margin-bottom: 10px;
+                margin-bottom: 0;
             }
         }
         .icon-divider {
-             margin: 20px auto 0;
+             margin: 10px auto;
         }
     }
 
     .time-counter {
-        margin-top: 50px;
+        margin-top: 25px;
         .time-countdown {
             display: flex;
             justify-content: center;

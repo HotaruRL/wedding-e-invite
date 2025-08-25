@@ -341,7 +341,7 @@ section .icon-divider {
 /* --- 1. BANNER SECTION (OVERVIEW) --- */
 #overview {
   min-height: 100vh;
-  padding-top: 200px;
+  padding-top: 150px;
   padding-bottom: 100px;
   background: url("../img/decorations/pink-rose-petals.jpg") center center no-repeat;
   background-size: cover;
@@ -349,6 +349,8 @@ section .icon-divider {
   background-blend-mode: multiply;
   background-color: rgba(30.6, 30.6, 30.6, 0.5);
   color: hsl(0, 0%, 98%);
+  display: flex;
+  align-items: center;
 }
 #overview .bg-pattern-1 {
   position: absolute;
@@ -365,7 +367,7 @@ section .icon-divider {
 }
 #overview .content-box {
   position: relative;
-  padding: 50px 0;
+  padding: 30px 0;
 }
 #overview .date {
   font-size: 1.6rem;
@@ -375,77 +377,108 @@ section .icon-divider {
   letter-spacing: 2px;
 }
 #overview .name {
-  font-size: 6rem;
+  font-size: 5.5rem;
   font-weight: 700;
   color: hsl(0, 0%, 100%);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   line-height: 1;
 }
 #overview .name .bride-name, #overview .name .groom-name {
   font-family: "Charmonman", cursive;
+  padding: 0 20px;
+  white-space: nowrap;
 }
-#overview .name .icon-heart {
+#overview .name .image-box {
+  position: relative;
+  margin: 0 40px;
+  width: 500px;
+  height: 500px;
+  flex-shrink: 0;
+}
+#overview .name .image-box .image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+}
+#overview .name .image-box .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#overview .name .image-box .icon-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-49%, -51%);
+  width: 700px;
+  height: 700px;
+}
+#overview .name .image-box .icon-box .icon-flowers-1 {
   content: "";
   display: block;
-  background: url("../img/decorations/love-icon-love-heart-vector.svg") no-repeat center center;
+  background: url("../img/decorations/watercolor-flowers-circular-frame.svg") no-repeat center center;
   background-size: contain;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   animation: none;
-  position: relative;
-  display: inline-block;
-  margin: 0 20px;
-  vertical-align: middle;
 }
 #overview .text {
   font-family: "Questrial", sans-serif;
   font-size: 1.8rem;
   color: hsl(0, 0%, 98%);
   font-weight: 300;
+  margin-top: 50px;
 }
 
+/* --- RESPONSIVE ADJUSTMENTS for the Banner --- */
+@media (max-width: 1280px) {
+  #overview .name {
+    flex-direction: column;
+    font-size: 4rem;
+  }
+  #overview .name .image-box {
+    margin: 30px 0;
+  }
+}
+@media (max-width: 768px) {
+  #overview .name {
+    font-size: 3rem;
+  }
+  #overview .name .image-box {
+    width: 300px;
+    height: 300px;
+  }
+  #overview .name .image-box .icon-box {
+    width: 360px;
+    height: 360px;
+  }
+}
+@media (max-width: 600px) {
+  #overview .name {
+    font-size: 2.5rem;
+  }
+  #overview .name .image-box {
+    width: 220px;
+    height: 220px;
+  }
+  #overview .name .image-box .icon-box {
+    width: 270px;
+    height: 270px;
+  }
+}
 /* --- 2. COUNTDOWN SECTION (REVISED) --- */
 #countdown {
   padding-top: 120px;
   padding-bottom: 120px;
   background-color: hsl(0, 0%, 95%);
-}
-#countdown .image-box {
-  position: relative;
-  margin: 0 auto 20px;
-  width: 150px;
-}
-#countdown .image-box .image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid hsl(342, 88%, 68%);
-}
-#countdown .image-box .image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#countdown .image-box .icon-box {
-  position: absolute;
-  top: -20px;
-  right: -20px;
-}
-#countdown .image-box .icon-box .icon-flowers-1 {
-  content: "";
-  display: block;
-  background: url("../img/decorations/flower-icon-1.svg") no-repeat center center;
-  background-size: contain;
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  animation: none;
 }
 #countdown .caption-box .sec-title {
   margin-bottom: 0;
@@ -455,13 +488,13 @@ section .icon-divider {
   font-size: 2.2rem;
   color: #c0893b;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 #countdown .caption-box .icon-divider {
-  margin: 20px auto 0;
+  margin: 10px auto;
 }
 #countdown .time-counter {
-  margin-top: 50px;
+  margin-top: 25px;
 }
 #countdown .time-counter .time-countdown {
   display: flex;
