@@ -38,12 +38,12 @@ $transition-slow: all 0.6s ease-in-out;
 // --- SPACING & SIZES ---
 $container-max-width: 1200px;         // For outer content wrapper (e.g., #navbar .container)
 $auto-container-width: 1170px;        // For inner section content blocks (from template)
-$padding-y-section-lg: 120px;         // Large vertical padding for sections
-$padding-y-section-md: 100px;
-$padding-y-section-sm: 80px;
-$padding-x-content: 12%;              // Horizontal padding for sections
-$padding-x-content-md: 8%;
-$padding-x-content-sm: 5%;
+$padding-y-section-lg: 60px;          // Was 120px
+$padding-y-section-md: 50px;          // Was 100px
+$padding-y-section-sm: 40px;          // Was 80px
+$padding-x-content: 8%;               // Was 12%
+$padding-x-content-md: 6%;            // Was 8%
+$padding-x-content-sm: 4%;            // Was 5%
 
 // --- BORDER RADIUS ---
 $border-radius-small: 0.5rem;

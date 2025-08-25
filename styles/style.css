@@ -130,7 +130,7 @@ footer {
   gap: 1.5rem;
   align-items: center;
   justify-content: center;
-  padding: 80px 0;
+  padding: 40px 0;
   background-color: hsl(0, 0%, 20%);
   color: hsl(0, 0%, 98%);
   text-align: center;
@@ -298,7 +298,7 @@ footer .copyright {
 section {
   width: 100%;
   position: relative;
-  padding: 120px 12%;
+  padding: 60px 8%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -660,14 +660,25 @@ section .icon-divider {
   }
 }
 
-/* --- 4. COUPLE SECTION (REVISED) --- */
-#couple .outer-box {
+/* --- 4. COUPLE SECTION (Revised with Divider) --- */
+#couple {
+  /* --- RESPONSIVE STYLES for Stacking --- */
+}
+#couple .auto-container {
   max-width: 1170px;
   margin: 0 auto;
 }
+#couple .icon-divider {
+  margin-bottom: 50px;
+}
+#couple .couple-grid {
+  display: flex;
+  gap: 40px;
+}
 #couple .couple-block {
-  margin-bottom: 40px;
-  padding: 30px;
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
 }
 #couple .couple-block .image-box {
   position: relative;
@@ -703,7 +714,7 @@ section .icon-divider {
   height: 50px;
   border: 3px solid hsl(342, 88%, 68%);
   border-radius: 50%;
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 95%);
   z-index: 1;
 }
 #couple .couple-block .image-box .icon-flowers-2 {
@@ -738,6 +749,11 @@ section .icon-divider {
   font-size: 1.1rem;
   color: hsl(0, 0%, 12%);
   line-height: 1.8;
+}
+@media (max-width: 768px) {
+  #couple .couple-grid {
+    flex-direction: column;
+  }
 }
 
 /* --- 5. OUR STORY SECTION (TIMELINE) (REVISED) --- */
@@ -976,7 +992,7 @@ section .icon-divider {
   font-weight: 500;
 }
 #program .google-map-wrapper {
-  padding: 120px 0;
+  padding: 60px 0;
   background-color: hsl(0, 0%, 95%);
   margin-top: 50px;
 }
@@ -1101,7 +1117,7 @@ section .icon-divider {
 /* --- 9. RSVP FORM SECTION (REVISED) --- */
 #rsvp-form {
   background-color: hsl(0, 0%, 95%);
-  padding: 120px 0;
+  padding: 60px 0;
 }
 #rsvp-form .row {
   align-items: center;
@@ -1351,7 +1367,7 @@ section .icon-divider {
 }
 @media (max-width: 992px) {
   section {
-    padding: 100px 8%;
+    padding: 50px 6%;
   }
   #overview .name {
     font-size: 4rem;
@@ -1429,7 +1445,7 @@ section .icon-divider {
 }
 @media (max-width: 768px) {
   section {
-    padding: 80px 5%;
+    padding: 40px 4%;
   }
   #overview .name {
     font-size: 3rem;
