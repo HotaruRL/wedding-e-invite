@@ -7,15 +7,16 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
     <!-- CSS Links -->
-    <link rel="stylesheet" href="scss/style.css">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Charmonman:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="styles/style.css">
     <!-- AOS (Animate On Scroll) CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Fancybox (Lightbox for Gallery) CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Charmonman:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
 
@@ -39,7 +40,7 @@
     </nav>
 
     <main>
-        <!-- Section 1: Banner/Overview (No change needed here) -->
+        <!-- Section 1: Banner/Overview -->
         <section id="overview" class="banner-section">
             <div class="bg-pattern-1"></div>
             <div class="auto-container">
@@ -48,7 +49,16 @@
                         Ngày 21, Tháng 11, 2025 — Nhà hàng - Khách sạn Hải Phát, Nghi Sơn, Thanh Hóa
                     </div>
                     <div class="name" data-aos="fade-up" data-aos-delay="800">
-                        <span class="bride-name">Mỹ Diệu</span><span class="icon-heart"></span><span class="groom-name">Đức Trí</span>
+                        <span class="bride-name">Mỹ Diệu</span>
+                        
+                        <div class="image-box">
+                            <figure class="image">
+                                <img src="img/decorations/dieu-tri-001.jpg" alt="Couple's photo">
+                            </figure>
+                            <div class="icon-box"><div class="icon-flowers-1"></div></div>
+                        </div>
+
+                        <span class="groom-name">Đức Trí</span>
                     </div>
                     <div class="text" data-aos="fade-up" data-aos-delay="1100">
                         Chúng mình cưới!
@@ -57,27 +67,17 @@
             </div>
         </section>
 
-        <!-- Section 2: Countdown Timer (Revised HTML Structure) -->
+        <!-- Section 2: Countdown Timer -->
         <section id="countdown" class="countdown-section">
             <div class="auto-container">
-                <!-- NEW: Wrapper for the blending decoration and text -->
-                <div class="countdown-blender-decor" data-aos="fade-up">
-                    <div class="image-box">
-                        <figure class="image">
-                            <img src="img/decorations/countdown-image.jpg" alt="Countdown decoration">
-                        </figure>
-                        <div class="icon-box"><div class="icon-flowers-1"></div></div>
-                    </div>
-                    <div class="caption-box">
-                        <div class="sec-title text-center">
-                            <div class="text sub-title">Đếm ngược với chúng mình nhé.</div>
-                            <span class="icon-divider"></span>
-                        </div>
+                <div class="caption-box" data-aos="fade-up">
+                    <div class="sec-title text-center">
+                        <div class="text sub-title">Đếm ngược với chúng mình nhé</div>
+                        <span class="icon-divider"></span>
                     </div>
                 </div>
-                <!-- The actual time counter remains below the blending element -->
                 <div class="time-counter" data-aos="fade-up" data-aos-delay="300">
-                    <div class="time-countdown" data-countdown="12/23/2025 09:00:00">
+                    <div class="time-countdown" data-countdown="11/02/2025 09:00:00">
                         <div class="counter-column"><span class="count vs-time-days">00</span><sub>Ngày</sub></div>
                         <div class="counter-column"><span class="count vs-time-hours">00</span><sub>Giờ</sub></div>
                         <div class="counter-column"><span class="count vs-time-minutes">00</span><sub>Phút</sub></div>
@@ -87,13 +87,13 @@
             </div>
         </section>
 
-        <!-- Section 3: Invitation Details (Nhà Trai, Nhà Gái, Lời Mời) -->
+        <!-- Section 3: Invitation Details (No change needed here) -->
         <section id="invitation-details" class="invitation-section section-padding">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-12 col-lg-6 text-center d-flex flex-column align-items-center">
                         <div class="invitation-main-img">
-                            <img src="img/decorations/save-the-date.png" alt="Save the Date">
+                            <img src="img/decorations/thiep-moi.jpg" alt="Save the Date">
                         </div>
                         <h3 class="mt-5">[Tên Cô Dâu] & [Tên Chú Rể]</h3>
                     </div>
@@ -144,44 +144,40 @@
             </div>
         </section>
 
-        <!-- Section 4: About the Couple -->
+        <!-- Section 4: About the Couple (Revised) -->
         <section id="couple" class="couple-section pt-0">
             <div class="auto-container">
                 <div class="outer-box">
                     <div class="row">
                         <div class="couple-block col-lg-6 col-md-12 col-sm-12" data-aos="fade-right">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <img src="img/groom_photo.jpg" alt="Groom's photo">
-                                    </figure>
-                                    <div class="couple-frame"></div>
-                                    <div class="icon-border"></div>
-                                    <div class="icon-flowers-2"></div>
-                                }
-                                <div class="content-box">
-                                    <span class="designation">Chú rể</span>
-                                    <h3 class="name">[Tên Chú Rể]</h3>
-                                    <div class="text">Chú rể viết gì đó ở đây nhé.</div>
-                                </div>
+                            <div class="image-box">
+                                <figure class="image">
+                                    <img src="img/groom_photo.jpg" alt="Groom's photo">
+                                </figure>
+                                <div class="couple-frame"></div>
+                                <div class="icon-border"></div>
+                                <div class="icon-flowers-2"></div>
+                            </div>
+                            <div class="content-box">
+                                <span class="designation">Chú rể</span>
+                                <h3 class="name">[Tên Chú Rể]</h3>
+                                <div class="text">Chú rể viết gì đó ở đây nhé.</div>
                             </div>
                         </div>
 
                         <div class="couple-block style-two col-lg-6 col-md-12 col-sm-12" data-aos="fade-left" data-aos-delay="300">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <img src="img/bride_photo.jpg" alt="Bride's photo">
-                                    </figure>
-                                    <div class="couple-frame"></div>
-                                    <div class="icon-border"></div>
-                                    <div class="icon-flowers-2"></div>
-                                </div>
-                                <div class="content-box">
-                                    <span class="designation">Cô dâu</span>
-                                    <h3 class="name">[Tên Cô Dâu]</h3>
-                                    <div class="text">Cô dâu cũng viết gì đó ở đây nhé.</div>
-                                </div>
+                            <div class="image-box">
+                                <figure class="image">
+                                    <img src="img/bride_photo.jpg" alt="Bride's photo">
+                                </figure>
+                                <div class="couple-frame"></div>
+                                <div class="icon-border"></div>
+                                <div class="icon-flowers-2"></div>
+                            </div>
+                            <div class="content-box">
+                                <span class="designation">Cô dâu</span>
+                                <h3 class="name">[Tên Cô Dâu]</h3>
+                                <div class="text">Cô dâu cũng viết gì đó ở đây nhé.</div>
                             </div>
                         </div>
                     </div>
@@ -189,7 +185,7 @@
             </div>
         </section>
 
-        <!-- Section 5: Our Story (Timeline) -->
+        <!-- Section 5: Our Story (Timeline) (Revised) -->
         <section id="story" class="story-section">
             <div class="anim-icons full-width">
                 <div class="icon-flowers-6 bounce-y"></div>
@@ -204,76 +200,70 @@
                 <div class="timeline-wrapper">
 
                     <div class="event-block-two" data-aos="fade-right">
-                        <div class="inner-box">
-                            <div class="date-column">
-                                <div class="date-box">
-                                    <div class="date"><span>[Ngày]</span>Tháng [Tháng]</div>
-                                    <div class="icon-flower-6"></div>
-                                    <div class="icon-flower-7"></div>
-                                </div>
+                        <div class="date-column">
+                            <div class="date-box">
+                                <div class="date"><span>[Ngày]</span>Tháng [Tháng]</div>
+                                <div class="icon-flower-6"></div>
+                                <div class="icon-flower-7"></div>
                             </div>
-                            <div class="image-column">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <img src="img/story_1.jpg" alt="Story Photo 1">
-                                    </figure>
-                                </div>
+                        </div>
+                        <div class="image-column">
+                            <div class="image-box">
+                                <figure class="image">
+                                    <img src="img/story_1.jpg" alt="Story Photo 1">
+                                </figure>
                             </div>
-                            <div class="content-column">
-                                <div class="content-box">
-                                    <h4 class="title">Lần đầu gặp mặt</h4>
-                                    <div class="text">Chúng mình gặp nhau lần đầu tiên vào ngày [Ngày] tháng [Tháng] năm [Năm] tại quán cafe ở quận 1, Sài Gòn.</div>
-                                </div>
+                        </div>
+                        <div class="content-column">
+                            <div class="content-box">
+                                <h4 class="title">Lần đầu gặp mặt</h4>
+                                <div class="text">Chúng mình gặp nhau lần đầu tiên vào ngày [Ngày] tháng [Tháng] năm [Năm] tại quán cafe ở quận 1, Sài Gòn.</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="event-block-two style-two" data-aos="fade-left" data-aos-delay="200">
-                        <div class="inner-box">
-                            <div class="date-column">
-                                <div class="date-box">
-                                    <div class="date"><span>[Ngày]</span>Tháng [Tháng]</div>
-                                    <div class="icon-flower-6"></div>
-                                    <div class="icon-flower-7"></div>
-                                </div>
+                        <div class="date-column">
+                            <div class="date-box">
+                                <div class="date"><span>[Ngày]</span>Tháng [Tháng]</div>
+                                <div class="icon-flower-6"></div>
+                                <div class="icon-flower-7"></div>
                             </div>
-                            <div class="image-column">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <img src="img/story_2.jpg" alt="Story Photo 2">
-                                    </figure>
-                                </div>
+                        </div>
+                        <div class="image-column">
+                            <div class="image-box">
+                                <figure class="image">
+                                    <img src="img/story_2.jpg" alt="Story Photo 2">
+                                </figure>
                             </div>
-                            <div class="content-column">
-                                <div class="content-box">
-                                    <h4 class="title">Anh ngỏ lời</h4>
-                                    <div class="text">Anh ngỏ lời sau 3 tháng quen biết và chúng mình chính thức quen nhau.</div>
-                                </div>
+                        </div>
+                        <div class="content-column">
+                            <div class="content-box">
+                                <h4 class="title">Anh ngỏ lời</h4>
+                                <div class="text">Anh ngỏ lời sau 3 tháng quen biết và chúng mình chính thức quen nhau.</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="event-block-two" data-aos="fade-right" data-aos-delay="400">
-                        <div class="inner-box">
-                            <div class="date-column">
-                                <div class="date-box">
-                                    <div class="date"><span>[Ngày]</span>Tháng [Tháng]</div>
-                                    <div class="icon-flower-6"></div>
-                                    <div class="icon-flower-7"></div>
-                                </div>
+                        <div class="date-column">
+                            <div class="date-box">
+                                <div class="date"><span>[Ngày]</span>Tháng [Tháng]</div>
+                                <div class="icon-flower-6"></div>
+                                <div class="icon-flower-7"></div>
                             </div>
-                            <div class="image-column">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <img src="img/story_3.jpg" alt="Story Photo 3">
-                                    </figure>
-                                </div>
+                        </div>
+                        <div class="image-column">
+                            <div class="image-box">
+                                <figure class="image">
+                                    <img src="img/story_3.jpg" alt="Story Photo 3">
+                                </figure>
                             </div>
-                            <div class="content-column">
-                                <div class="content-box">
-                                    <h4 class="title">Chính thức ở bên nhau</h4>
-                                    <div class="text">Chúng mình chính thức ở bên nhau vào ngày [Ngày] tháng [Tháng] năm [Năm]. Sau màn cầu hôn lãng mạn của anh.</div>
-                                </div>
+                        </div>
+                        <div class="content-column">
+                            <div class="content-box">
+                                <h4 class="title">Chính thức ở bên nhau</h4>
+                                <div class="text">Chúng mình chính thức ở bên nhau vào ngày [Ngày] tháng [Tháng] năm [Năm]. Sau màn cầu hôn lãng mạn của anh.</div>
                             </div>
                         </div>
                     </div>
@@ -281,7 +271,7 @@
             </div>
         </section>
 
-        <!-- Section 7: Photo Gallery -->
+        <!-- Section 7: Photo Gallery (No change needed here) -->
         <section id="gallery" class="gallery-section">
             <div class="auto-container">
                 <div class="outer-box">
@@ -317,7 +307,7 @@
             </div>
         </section>
 
-        <!-- Section 6: Wedding Program/Ceremony Details -->
+        <!-- Section 6: Wedding Program/Ceremony Details (Revised) -->
         <section id="program" class="program-section">
             <div class="auto-container">
                 <div class="sec-title text-center">
@@ -326,59 +316,53 @@
                 </div>
                 <div class="row">
                     <div class="program-block col-lg-4 col-md-12 col-sm-12" data-aos="fade-up">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image">
-                                    <img src="img/decorations/program-photo-1.jpg" alt="Đón khách & chụp hình">
-                                </figure>
-                                <span class="icon-shape"></span>
-                                <i class="icon flaticon-wedding-arch"></i>
-                            </div>
-                            <div class="content-box">
-                                <h6 class="title">Đón khách & chụp hình</h6>
-                                <div class="date">Ngày [Ngày] tháng [Tháng], [Năm] - [Thứ]</div>
-                                <div class="time">[Giờ Bắt Đầu] – [Giờ Kết Thúc]</div>
-                                <span class="icon-divider-3"></span>
-                                <div class="address">Tại [Tên Địa Điểm]: [Địa Chỉ]</div>
-                            </div>
+                        <div class="image-box">
+                            <figure class="image">
+                                <img src="img/decorations/program-photo-1.jpg" alt="Đón khách & chụp hình">
+                            </figure>
+                            <span class="icon-shape"></span>
+                            <i class="icon flaticon-wedding-arch"></i>
+                        </div>
+                        <div class="content-box">
+                            <h6 class="title">Đón khách & chụp hình</h6>
+                            <div class="date">Ngày [Ngày] tháng [Tháng], [Năm] - [Thứ]</div>
+                            <div class="time">[Giờ Bắt Đầu] – [Giờ Kết Thúc]</div>
+                            <span class="icon-divider-3"></span>
+                            <div class="address">Tại [Tên Địa Điểm]: [Địa Chỉ]</div>
                         </div>
                     </div>
 
                     <div class="program-block col-lg-4 col-md-12 col-sm-12" data-aos="fade-up" data-aos-delay="300">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image">
-                                    <img src="img/decorations/program-photo-2.jpg" alt="Làm lễ">
-                                </figure>
-                                <span class="icon-shape"></span>
-                                <i class="icon flaticon-marriage"></i>
-                            </div>
-                            <div class="content-box">
-                                <h6 class="title">Làm lễ</h6>
-                                <div class="date">Ngày [Ngày] tháng [Tháng], [Năm] - [Thứ]</div>
-                                <div class="time">[Giờ Bắt Đầu] – [Giờ Kết Thúc]</div>
-                                <span class="icon-divider-3"></span>
-                                <div class="address">Tại [Tên Địa Điểm]: [Địa Chỉ]</div>
-                            </div>
+                        <div class="image-box">
+                            <figure class="image">
+                                <img src="img/decorations/program-photo-2.jpg" alt="Làm lễ">
+                            </figure>
+                            <span class="icon-shape"></span>
+                            <i class="icon flaticon-marriage"></i>
+                        </div>
+                        <div class="content-box">
+                            <h6 class="title">Làm lễ</h6>
+                            <div class="date">Ngày [Ngày] tháng [Tháng], [Năm] - [Thứ]</div>
+                            <div class="time">[Giờ Bắt Đầu] – [Giờ Kết Thúc]</div>
+                            <span class="icon-divider-3"></span>
+                            <div class="address">Tại [Tên Địa Điểm]: [Địa Chỉ]</div>
                         </div>
                     </div>
 
                     <div class="program-block col-lg-4 col-md-12 col-sm-12" data-aos="fade-up" data-aos-delay="600">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image">
-                                    <img src="img/decorations/program-photo-3.jpg" alt="Nhập tiệc">
-                                </figure>
-                                <span class="icon-shape"></span>
-                                <i class="icon flaticon-musical-notes"></i>
-                            </div>
-                            <div class="content-box">
-                                <h6 class="title">Nhập tiệc</h6>
-                                <div class="date">Ngày [Ngày] tháng [Tháng], [Năm] - [Thứ]</div>
-                                <div class="time">[Giờ Bắt Đầu] – [Giờ Kết Thúc]</div>
-                                <span class="icon-divider-3"></span>
-                                <div class="address">Tại [Tên Địa Điểm]: [Địa Chỉ]</div>
-                            </div>
+                        <div class="image-box">
+                            <figure class="image">
+                                <img src="img/decorations/program-photo-3.jpg" alt="Nhập tiệc">
+                            </figure>
+                            <span class="icon-shape"></span>
+                            <i class="icon flaticon-musical-notes"></i>
+                        </div>
+                        <div class="content-box">
+                            <h6 class="title">Nhập tiệc</h6>
+                            <div class="date">Ngày [Ngày] tháng [Tháng], [Năm] - [Thứ]</div>
+                            <div class="time">[Giờ Bắt Đầu] – [Giờ Kết Thúc]</div>
+                            <span class="icon-divider-3"></span>
+                            <div class="address">Tại [Tên Địa Điểm]: [Địa Chỉ]</div>
                         </div>
                     </div>
                 </div>
@@ -393,7 +377,7 @@
             </div>
         </section>
 
-        <!-- Section 8: Call to Action (Fixed Background) -->
+        <!-- Section 8: Call to Action (No change needed here) -->
         <section id="cta" class="call-to-action" style="background-image: url('img/decorations/cta-background.jpg');">
             <div class="icon-flowers bounce-y"></div>
             <div class="auto-container">
@@ -412,36 +396,32 @@
             </div>
         </section>
 
-        <!-- Section 9: RSVP Form (2-column: video + form) -->
+        <!-- Section 9: RSVP Form (Revised) -->
         <section id="rsvp-form" class="contact-section">
             <div class="auto-container">
                 <div class="row">
                     <div class="form-column col-lg-6 col-md-12 col-sm-12 order-lg-2" data-aos="fade-right" data-aos-delay="300">
-                        <div class="inner-column">
-                            <div class="icon-leave bounce-x"></div>
-                            <div class="contact-form-one">
-                                <h6 class="title">Bạn sẽ đến chứ?</h6>
-                                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe994qwiwsE1zqoK9xFsVpZt3p2IsZTZAPs8JEXyC0JAQFzYQ/viewform?embedded=true" width="640" height="1807" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                            </div>
+                        <div class="icon-leave bounce-x"></div>
+                        <div class="contact-form-one">
+                            <h6 class="title">Bạn sẽ đến chứ?</h6>
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe994qwiwsE1zqoK9xFsVpZt3p2IsZTZAPs8JEXyC0JAQFzYQ/viewform?embedded=true" width="640" height="1807" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                         </div>
                     </div>
 
                     <div class="video-column col-lg-6 col-md-12" data-aos="fade-left">
-                        <div class="inner-column">
-                            <div class="video-box">
-                                <figure class="image">
-                                    <img src="img/decorations/contact-video-poster.jpg" alt="Video poster">
-                                </figure>
-                                <a href="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID" class="play-btn vs-video-btn" data-fancybox=""><i class="icon fa fa-play"></i></a>
-                                <div class="icon-leaves-27 rotate-x"></div>
-                            </div>
+                        <div class="video-box">
+                            <figure class="image">
+                                <img src="img/decorations/contact-video-poster.jpg" alt="Video poster">
+                            </figure>
+                            <a href="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID" class="play-btn vs-video-btn" data-fancybox=""><i class="icon fa fa-play"></i></a>
+                            <div class="icon-leaves-27 rotate-x"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 10: Food Menu -->
+        <!-- Section 10: Food Menu (No change needed here) -->
         <section id="menu-food" class="menu-section">
             <div class="food-menu">
                 <div class="menu-decor-top">
@@ -485,7 +465,7 @@
             </div>
         </section>
 
-        <!-- Section 11: Gifts / Wishes -->
+        <!-- Section 11: Gifts / Wishes (Revised) -->
         <section id="gifts" class="gift-section">
             <div class="auto-container">
                 <div class="sec-title text-center">
@@ -495,7 +475,7 @@
                     <span class="gift-message">Gửi mừng cưới sớm cho dâu và rể bằng mã QR dưới đây bạn yêu nhé</span>
                 </div>
 
-                <div class="text-center gift-info">
+                <div class="text-center">
                     <span class="account-detail">Số tài khoản: [Số Tài Khoản]</span>
                     <span class="account-detail mt-1">Chủ tài khoản: [Tên Cô Dâu hoặc Chú Rể]</span>
                     <span class="account-detail mt-1">Ngân hàng: <strong>[Tên Ngân Hàng]</strong></span>
